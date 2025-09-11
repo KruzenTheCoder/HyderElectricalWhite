@@ -107,7 +107,7 @@
   left: 50%;
   transform: translateX(-50%);
   font-family: var(--font-playfair);
-  font-size: 25px;
+  font-size: 22px;
   letter-spacing: 8px;
   color: var(--gold);
   text-transform: uppercase;
@@ -1004,5 +1004,339 @@
 
   .contactInfo {
     padding-right: 0;
+  }
+}
+
+/* Navigation Logo Text - Mobile Responsive */
+.logoText {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: #D4AF37;
+  letter-spacing: 1px;
+}
+
+/* Mobile Logo Adjustments */
+@media (max-width: 768px) {
+  .logoText {
+    font-size: 18px; /* Smaller on tablets */
+    letter-spacing: 0.5px;
+  }
+  
+  .logoIcon {
+    width: 35px;
+    height: 35px;
+    padding-right: 2%;
+  }
+  
+  .logoContainer {
+    gap: 10px; /* Reduce gap between icon and text */
+  }
+}
+
+@media (max-width: 480px) {
+  .logoText {
+    font-size: 16px; /* Even smaller on mobile */
+    letter-spacing: 0.3px;
+  }
+  
+  .logoIcon {
+    width: 30px;
+    height: 30px;
+    padding-right: 0;
+  }
+  
+  .logoContainer {
+    gap: 8px;
+  }
+  
+  .nav {
+    padding: 15px 20px; /* Reduce nav padding on mobile */
+  }
+  
+  .nav.scrolled {
+    padding: 10px 20px;
+  }
+}
+
+/* About Section - Complete Mobile Responsive Update */
+.aboutSection {
+  padding: 80px 60px;
+  max-width: 1400px;
+  margin: 0 auto;
+  background-color: transparent;
+}
+
+.aboutGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  margin-bottom: 100px;
+}
+
+.aboutContent h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  color: #D4AF37;
+  margin-bottom: 30px;
+}
+
+.aboutContent p {
+  line-height: 2;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 25px;
+  font-weight: 300;
+}
+
+.aboutStats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  padding: 40px;
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.05) 0%, rgba(184, 115, 51, 0.03) 100%);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: 10px;
+}
+
+.statItem {
+  text-align: center;
+}
+
+.statNumber {
+  font-family: 'Playfair Display', serif;
+  font-size: 48px;
+  color: #D4AF37;
+  margin-bottom: 10px;
+}
+
+.statLabel {
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Tablet View for About Section */
+@media (max-width: 1024px) {
+  .aboutSection {
+    padding: 60px 40px;
+  }
+  
+  .aboutGrid {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+  
+  .aboutStats {
+    padding: 30px;
+  }
+}
+
+/* Mobile View for About Section */
+@media (max-width: 768px) {
+  .aboutSection {
+    padding: 50px 30px;
+  }
+  
+  .sectionHeader {
+    margin-bottom: 50px;
+  }
+  
+  .sectionTitle {
+    font-size: 36px;
+  }
+  
+  .sectionSubtitle {
+    font-size: 11px;
+    letter-spacing: 3px;
+  }
+  
+  .aboutGrid {
+    gap: 40px;
+    margin-bottom: 60px;
+  }
+  
+  .aboutContent h3 {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+  
+  .aboutContent p {
+    font-size: 15px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+  }
+  
+  .aboutStats {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    padding: 25px;
+  }
+  
+  .statNumber {
+    font-size: 36px;
+  }
+  
+  .statLabel {
+    font-size: 10px;
+    letter-spacing: 1.5px;
+  }
+}
+
+/* Small Mobile View for About Section */
+@media (max-width: 480px) {
+  .aboutSection {
+    padding: 40px 20px;
+  }
+  
+  .sectionTitle {
+    font-size: 28px;
+    line-height: 1.2;
+  }
+  
+  .sectionSubtitle {
+    font-size: 10px;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+  }
+  
+  .sectionDivider {
+    width: 80px;
+  }
+  
+  .aboutGrid {
+    gap: 30px;
+    margin-bottom: 40px;
+  }
+  
+  .aboutContent h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    line-height: 1.3;
+  }
+  
+  .aboutContent p {
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 15px;
+  }
+  
+  .aboutStats {
+    grid-template-columns: 1fr; /* Stack stats vertically on very small screens */
+    gap: 20px;
+    padding: 20px;
+    border-radius: 8px;
+  }
+  
+  .statItem {
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+  }
+  
+  .statItem:last-child {
+    border-bottom: none;
+  }
+  
+  .statNumber {
+    font-size: 32px;
+    margin-bottom: 5px;
+  }
+  
+  .statLabel {
+    font-size: 9px;
+    letter-spacing: 1px;
+  }
+}
+
+/* Extra Small Devices (below 360px) */
+@media (max-width: 360px) {
+  .logoText {
+    font-size: 14px;
+    letter-spacing: 0;
+  }
+  
+  .logoIcon {
+    width: 25px;
+    height: 25px;
+  }
+  
+  .nav {
+    padding: 12px 15px;
+  }
+  
+  .aboutSection {
+    padding: 30px 15px;
+  }
+  
+  .sectionTitle {
+    font-size: 24px;
+  }
+  
+  .aboutContent h3 {
+    font-size: 20px;
+  }
+  
+  .aboutContent p {
+    font-size: 13px;
+  }
+  
+  .statNumber {
+    font-size: 28px;
+  }
+}
+
+/* Mobile Menu Button Positioning Fix */
+@media (max-width: 768px) {
+  .navContainer {
+    position: relative;
+  }
+  
+  .mobileMenuBtn {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    cursor: pointer;
+    padding: 5px;
+    z-index: 1001;
+  }
+  
+  .navMenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #0f0d08;
+    padding: 20px;
+    flex-direction: column;
+    gap: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border-top: 1px solid rgba(212, 175, 55, 0.1);
+  }
+  
+  .navMenu.mobileMenuOpen {
+    display: flex;
+    animation: slideDown 0.3s ease;
+  }
+  
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .navLink {
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.05);
+    font-size: 12px;
+  }
+  
+  .navLink:last-child {
+    border-bottom: none;
   }
 }
