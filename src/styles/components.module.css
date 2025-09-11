@@ -107,7 +107,7 @@
   left: 50%;
   transform: translateX(-50%);
   font-family: var(--font-playfair);
-  font-size: 45px;
+  font-size: 25px;
   letter-spacing: 8px;
   color: var(--gold);
   text-transform: uppercase;
