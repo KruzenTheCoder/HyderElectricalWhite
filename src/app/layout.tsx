@@ -17,8 +17,8 @@ const playfair = Playfair_Display({
 })
 
 export const metadata: Metadata = {
-  title: 'Hyder Electrical | Luxury Electrical Engineering',
-  description: 'A electrical engineering firm, specializing in high-end commercial, industrial, and infrastructure projects across South Africa.',
+  title: 'Hyder Electrical | Electrical Contractor South Africa',
+  description: 'A electrical contractor, specializing in high-end commercial, industrial, and infrastructure projects across South Africa.',
 }
 
 export default function RootLayout({
