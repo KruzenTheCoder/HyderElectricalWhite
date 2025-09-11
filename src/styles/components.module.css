@@ -1340,3 +1340,155 @@
     border-bottom: none;
   }
 }
+
+/* Navigation Logo Container and Spacing */
+.logoContainer {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Space between icon and text */
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.logoIcon {
+  width: 40px;
+  height: 40px;
+  position: relative;
+  color: #D4AF37;
+  padding-right: 0; /* Remove the padding-right that was causing issues */
+  flex-shrink: 0; /* Prevent icon from shrinking */
+}
+
+.logoIcon img {
+  width: auto;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+}
+
+.logoIcon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.logoText {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: #D4AF37;
+  letter-spacing: 1px;
+  white-space: nowrap; /* Prevent text wrapping */
+}
+
+/* Tablet View (768px - 1024px) */
+@media (max-width: 1024px) {
+  .logoContainer {
+    gap: 12px; /* Slightly smaller gap on tablets */
+  }
+  
+  .logoText {
+    font-size: 22px;
+  }
+}
+
+/* Mobile View (480px - 768px) */
+@media (max-width: 768px) {
+  .logoContainer {
+    gap: 10px; /* Maintain visible gap on mobile */
+  }
+  
+  .logoIcon {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .logoText {
+    font-size: 18px;
+    letter-spacing: 0.5px;
+  }
+  
+  .nav {
+    padding: 20px 30px;
+  }
+  
+  .nav.scrolled {
+    padding: 15px 30px;
+  }
+}
+
+/* Small Mobile View (below 480px) */
+@media (max-width: 480px) {
+  .logoContainer {
+    gap: 8px; /* Still maintain gap even on small screens */
+  }
+  
+  .logoIcon {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .logoText {
+    font-size: 16px;
+    letter-spacing: 0.3px;
+  }
+  
+  .nav {
+    padding: 15px 20px;
+  }
+  
+  .nav.scrolled {
+    padding: 10px 20px;
+  }
+}
+
+/* Extra Small Devices (below 360px) */
+@media (max-width: 360px) {
+  .logoContainer {
+    gap: 6px; /* Smaller but still visible gap */
+  }
+  
+  .logoIcon {
+    width: 25px;
+    height: 25px;
+  }
+  
+  .logoText {
+    font-size: 14px;
+    letter-spacing: 0;
+  }
+  
+  .nav {
+    padding: 12px 15px;
+  }
+  
+  .nav.scrolled {
+    padding: 8px 15px;
+  }
+}
+
+/* Ensure proper alignment on all screen sizes */
+.navContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Fix for very large screens */
+@media (min-width: 1440px) {
+  .logoContainer {
+    gap: 20px; /* Larger gap on big screens */
+  }
+  
+  .logoIcon {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .logoText {
+    font-size: 26px;
+    letter-spacing: 1.5px;
+  }
+}
