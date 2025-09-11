@@ -140,18 +140,11 @@
   background: linear-gradient(135deg, rgba(212, 175, 55, 0.05) 0%, rgba(10, 14, 39, 0.8) 100%);
 }
 
-.navContainer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1400px;
-  margin: 0 auto;
-}
-
+/* Updated Navigation Logo Container and Spacing */
 .logoContainer {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 15px; /* Space between icon and text */
   cursor: pointer;
   text-decoration: none;
 }
@@ -160,8 +153,16 @@
   width: 40px;
   height: 40px;
   position: relative;
-  color: var(--gold);
-  padding-right: 5%;
+  color: #D4AF37;
+  padding-right: 0; /* Remove the padding-right that was causing issues */
+  flex-shrink: 0; /* Prevent icon from shrinking */
+}
+
+.logoIcon img {
+  width: auto;
+  height: 100%;
+  display: block;
+  object-fit: contain;
 }
 
 .logoIcon svg {
@@ -170,11 +171,22 @@
 }
 
 .logoText {
-  font-family: var(--font-playfair);
+  font-family: 'Playfair Display', serif;
   font-size: 24px;
   font-weight: 700;
-  color: var(--gold);
+  color: #D4AF37;
   letter-spacing: 1px;
+  white-space: nowrap; /* Prevent text wrapping */
+}
+
+/* Updated Nav Container Alignment */
+.navContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
 }
 
 .navMenu {
@@ -942,24 +954,74 @@
 }
 
 /* Responsive */
+
+/* Fix for very large screens */
+@media (min-width: 1440px) {
+  .logoContainer {
+    gap: 20px; /* Larger gap on big screens */
+  }
+  
+  .logoIcon {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .logoText {
+    font-size: 26px;
+    letter-spacing: 1.5px;
+  }
+}
+
+/* Tablet View (1024px and below) */
 @media (max-width: 1024px) {
+  .logoContainer {
+    gap: 12px; /* Slightly smaller gap on tablets */
+  }
+  
+  .logoText {
+    font-size: 22px;
+  }
+
   .aboutGrid, .contactGrid {
     grid-template-columns: 1fr;
     gap: 50px;
   }
 
-  .servicesGrid {
+  .servicesGrid, .projectsShowcase {
     grid-template-columns: 1fr;
   }
 
-  .projectsShowcase {
-    grid-template-columns: 1fr;
+  .aboutSection {
+    padding: 60px 40px;
+  }
+  
+  .aboutStats {
+    padding: 30px;
   }
 }
 
+/* Mobile View (768px and below) */
 @media (max-width: 768px) {
+  .logoContainer {
+    gap: 10px; /* Maintain visible gap on mobile */
+  }
+  
+  .logoIcon {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .logoText {
+    font-size: 18px;
+    letter-spacing: 0.5px;
+  }
+  
   .nav {
     padding: 20px 30px;
+  }
+  
+  .nav.scrolled {
+    padding: 15px 30px;
   }
 
   .navMenu {
@@ -1005,135 +1067,7 @@
   .contactInfo {
     padding-right: 0;
   }
-}
 
-/* Navigation Logo Text - Mobile Responsive */
-.logoText {
-  font-family: 'Playfair Display', serif;
-  font-size: 24px;
-  font-weight: 700;
-  color: #D4AF37;
-  letter-spacing: 1px;
-}
-
-/* Mobile Logo Adjustments */
-@media (max-width: 768px) {
-  .logoText {
-    font-size: 18px; /* Smaller on tablets */
-    letter-spacing: 0.5px;
-  }
-  
-  .logoIcon {
-    width: 35px;
-    height: 35px;
-    padding-right: 2%;
-  }
-  
-  .logoContainer {
-    gap: 10px; /* Reduce gap between icon and text */
-  }
-}
-
-@media (max-width: 480px) {
-  .logoText {
-    font-size: 16px; /* Even smaller on mobile */
-    letter-spacing: 0.3px;
-  }
-  
-  .logoIcon {
-    width: 30px;
-    height: 30px;
-    padding-right: 0;
-  }
-  
-  .logoContainer {
-    gap: 8px;
-  }
-  
-  .nav {
-    padding: 15px 20px; /* Reduce nav padding on mobile */
-  }
-  
-  .nav.scrolled {
-    padding: 10px 20px;
-  }
-}
-
-/* About Section - Complete Mobile Responsive Update */
-.aboutSection {
-  padding: 80px 60px;
-  max-width: 1400px;
-  margin: 0 auto;
-  background-color: transparent;
-}
-
-.aboutGrid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  margin-bottom: 100px;
-}
-
-.aboutContent h3 {
-  font-family: 'Playfair Display', serif;
-  font-size: 32px;
-  color: #D4AF37;
-  margin-bottom: 30px;
-}
-
-.aboutContent p {
-  line-height: 2;
-  color: rgba(255, 255, 255, 0.8);
-  margin-bottom: 25px;
-  font-weight: 300;
-}
-
-.aboutStats {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 40px;
-  padding: 40px;
-  background: linear-gradient(135deg, rgba(212, 175, 55, 0.05) 0%, rgba(184, 115, 51, 0.03) 100%);
-  border: 1px solid rgba(212, 175, 55, 0.2);
-  border-radius: 10px;
-}
-
-.statItem {
-  text-align: center;
-}
-
-.statNumber {
-  font-family: 'Playfair Display', serif;
-  font-size: 48px;
-  color: #D4AF37;
-  margin-bottom: 10px;
-}
-
-.statLabel {
-  font-size: 12px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.6);
-}
-
-/* Tablet View for About Section */
-@media (max-width: 1024px) {
-  .aboutSection {
-    padding: 60px 40px;
-  }
-  
-  .aboutGrid {
-    grid-template-columns: 1fr;
-    gap: 50px;
-  }
-  
-  .aboutStats {
-    padding: 30px;
-  }
-}
-
-/* Mobile View for About Section */
-@media (max-width: 768px) {
   .aboutSection {
     padding: 50px 30px;
   }
@@ -1141,11 +1075,7 @@
   .sectionHeader {
     margin-bottom: 50px;
   }
-  
-  .sectionTitle {
-    font-size: 36px;
-  }
-  
+
   .sectionSubtitle {
     font-size: 11px;
     letter-spacing: 3px;
@@ -1181,10 +1111,86 @@
     font-size: 10px;
     letter-spacing: 1.5px;
   }
+
+  /* Mobile Menu Button Positioning Fix */
+  .navContainer {
+    position: relative;
+  }
+  
+  .mobileMenuBtn {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    cursor: pointer;
+    padding: 5px;
+    z-index: 1001;
+  }
+  
+  .navMenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #0f0d08;
+    padding: 20px;
+    flex-direction: column;
+    gap: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border-top: 1px solid rgba(212, 175, 55, 0.1);
+  }
+  
+  .navMenu.mobileMenuOpen {
+    display: flex;
+    animation: slideDown 0.3s ease;
+  }
+  
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .navLink {
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.05);
+    font-size: 12px;
+  }
+  
+  .navLink:last-child {
+    border-bottom: none;
+  }
 }
 
-/* Small Mobile View for About Section */
+/* Small Mobile View (480px and below) */
 @media (max-width: 480px) {
+  .logoContainer {
+    gap: 8px; /* Still maintain gap even on small screens */
+  }
+  
+  .logoIcon {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .logoText {
+    font-size: 16px;
+    letter-spacing: 0.3px;
+  }
+  
+  .nav {
+    padding: 15px 20px;
+  }
+  
+  .nav.scrolled {
+    padding: 10px 20px;
+  }
+
   .aboutSection {
     padding: 40px 20px;
   }
@@ -1248,200 +1254,7 @@
   }
 }
 
-/* Extra Small Devices (below 360px) */
-@media (max-width: 360px) {
-  .logoText {
-    font-size: 14px;
-    letter-spacing: 0;
-  }
-  
-  .logoIcon {
-    width: 25px;
-    height: 25px;
-  }
-  
-  .nav {
-    padding: 12px 15px;
-  }
-  
-  .aboutSection {
-    padding: 30px 15px;
-  }
-  
-  .sectionTitle {
-    font-size: 24px;
-  }
-  
-  .aboutContent h3 {
-    font-size: 20px;
-  }
-  
-  .aboutContent p {
-    font-size: 13px;
-  }
-  
-  .statNumber {
-    font-size: 28px;
-  }
-}
-
-/* Mobile Menu Button Positioning Fix */
-@media (max-width: 768px) {
-  .navContainer {
-    position: relative;
-  }
-  
-  .mobileMenuBtn {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    cursor: pointer;
-    padding: 5px;
-    z-index: 1001;
-  }
-  
-  .navMenu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background: #0f0d08;
-    padding: 20px;
-    flex-direction: column;
-    gap: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    border-top: 1px solid rgba(212, 175, 55, 0.1);
-  }
-  
-  .navMenu.mobileMenuOpen {
-    display: flex;
-    animation: slideDown 0.3s ease;
-  }
-  
-  @keyframes slideDown {
-    from {
-      opacity: 0;
-      transform: translateY(-10px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  .navLink {
-    padding: 10px 0;
-    border-bottom: 1px solid rgba(212, 175, 55, 0.05);
-    font-size: 12px;
-  }
-  
-  .navLink:last-child {
-    border-bottom: none;
-  }
-}
-
-/* Navigation Logo Container and Spacing */
-.logoContainer {
-  display: flex;
-  align-items: center;
-  gap: 15px; /* Space between icon and text */
-  cursor: pointer;
-  text-decoration: none;
-}
-
-.logoIcon {
-  width: 40px;
-  height: 40px;
-  position: relative;
-  color: #D4AF37;
-  padding-right: 0; /* Remove the padding-right that was causing issues */
-  flex-shrink: 0; /* Prevent icon from shrinking */
-}
-
-.logoIcon img {
-  width: auto;
-  height: 100%;
-  display: block;
-  object-fit: contain;
-}
-
-.logoIcon svg {
-  width: 100%;
-  height: 100%;
-}
-
-.logoText {
-  font-family: 'Playfair Display', serif;
-  font-size: 24px;
-  font-weight: 700;
-  color: #D4AF37;
-  letter-spacing: 1px;
-  white-space: nowrap; /* Prevent text wrapping */
-}
-
-/* Tablet View (768px - 1024px) */
-@media (max-width: 1024px) {
-  .logoContainer {
-    gap: 12px; /* Slightly smaller gap on tablets */
-  }
-  
-  .logoText {
-    font-size: 22px;
-  }
-}
-
-/* Mobile View (480px - 768px) */
-@media (max-width: 768px) {
-  .logoContainer {
-    gap: 10px; /* Maintain visible gap on mobile */
-  }
-  
-  .logoIcon {
-    width: 35px;
-    height: 35px;
-  }
-  
-  .logoText {
-    font-size: 18px;
-    letter-spacing: 0.5px;
-  }
-  
-  .nav {
-    padding: 20px 30px;
-  }
-  
-  .nav.scrolled {
-    padding: 15px 30px;
-  }
-}
-
-/* Small Mobile View (below 480px) */
-@media (max-width: 480px) {
-  .logoContainer {
-    gap: 8px; /* Still maintain gap even on small screens */
-  }
-  
-  .logoIcon {
-    width: 30px;
-    height: 30px;
-  }
-  
-  .logoText {
-    font-size: 16px;
-    letter-spacing: 0.3px;
-  }
-  
-  .nav {
-    padding: 15px 20px;
-  }
-  
-  .nav.scrolled {
-    padding: 10px 20px;
-  }
-}
-
-/* Extra Small Devices (below 360px) */
+/* Extra Small Devices (360px and below) */
 @media (max-width: 360px) {
   .logoContainer {
     gap: 6px; /* Smaller but still visible gap */
@@ -1464,31 +1277,24 @@
   .nav.scrolled {
     padding: 8px 15px;
   }
-}
-
-/* Ensure proper alignment on all screen sizes */
-.navContainer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1400px;
-  margin: 0 auto;
-  width: 100%;
-}
-
-/* Fix for very large screens */
-@media (min-width: 1440px) {
-  .logoContainer {
-    gap: 20px; /* Larger gap on big screens */
+  
+  .aboutSection {
+    padding: 30px 15px;
   }
   
-  .logoIcon {
-    width: 45px;
-    height: 45px;
+  .sectionTitle {
+    font-size: 24px;
   }
   
-  .logoText {
-    font-size: 26px;
-    letter-spacing: 1.5px;
+  .aboutContent h3 {
+    font-size: 20px;
+  }
+  
+  .aboutContent p {
+    font-size: 13px;
+  }
+  
+  .statNumber {
+    font-size: 28px;
   }
 }
