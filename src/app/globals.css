@@ -1,26 +1,165 @@
-@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;500;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --gold: #D4AF37;
+  --copper: #B87333;
+  --dark-navy: #1a1611; /* Changed from #0A0E27 - warmer dark brown */
+  --midnight: #0f0d08; /* Changed from #060818 - gold-tinted dark */
+  --steel: #71797E;
+  --white: #FFFFFF;
+  --grid-color: rgba(212, 175, 55, 0.1);
+  --line-color: rgba(212, 175, 55, 0.3);
+  --grid-color-light: rgba(212, 175, 55, 0.15);
+  --bg-color: #0a0804; /* Changed from #0b0b0b - warm black with gold tint */
+  --font-montserrat: 'Montserrat', sans-serif;
+  --font-playfair: 'Playfair Display', serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+::-webkit-scrollbar {
+  width: 8px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+::-webkit-scrollbar-track {
+  background: var(--midnight);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--gold), var(--copper));
+  border-radius: 4px;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Montserrat', sans-serif;
+  background: var(--bg-color); /* Now uses the warm black */
+  color: var(--white);
+  overflow-x: hidden;
+  position: relative;
+  margin: 0;
+  min-height: 100vh;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.main-container {
+  position: relative;
+  z-index: 2;
+  min-height: 100vh;
+  padding-top: 90px;
+}
+
+/* Rest of the animations remain the same */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-10px);
+  }
+}
+
+@keyframes pageTransition {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse-rotate {
+  0% {
+    transform: rotate(0deg) scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: rotate(180deg) scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+    opacity: 0.8;
+  }
+}
+
+@keyframes pulse-rotate-reverse {
+  0% {
+    transform: rotate(360deg) scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: rotate(180deg) scale(0.9);
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(0deg) scale(1);
+    opacity: 0.6;
+  }
+}
+
+@keyframes bolt-pulse {
+  0%, 100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.8));
+  }
+  50% {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 40px rgba(212, 175, 55, 1));
+  }
+}
+
+@keyframes grid-move {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(50px, 50px); }
+}
+
+@keyframes grid-move-reverse {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(-50px, -50px); }
+}
+
+@keyframes draw-circuit {
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes flicker {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.6; }
+}
+
+@keyframes scaffold-draw {
+  0%, 100% { height: 0; opacity: 0.2; }
+  50% { height: 100vh; opacity: 0.6; }
+}
+
+@keyframes particle-move {
+  0% { transform: translate(0, 0); opacity: 0.8; }
+  100% { transform: translate(100vw, 100vh); opacity: 0; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes glow {
+  from {
+    filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.5));
+  }
+  to {
+    filter: drop-shadow(0 0 30px rgba(212, 175, 55, 0.8));
+  }
 }
