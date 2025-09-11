@@ -1,5 +1,4 @@
 /* This file would contain all the component-specific styles from your original CSS */
-/* Due to length constraints, I'll provide the key sections - you'll need to add the complete styles */
 
 /* Loader Styles */
 .loaderContainer {
@@ -140,34 +139,33 @@
   background: linear-gradient(135deg, rgba(212, 175, 55, 0.05) 0%, rgba(10, 14, 39, 0.8) 100%);
 }
 
-/* Updated Navigation Logo Container and Spacing */
+/* Navigation Logo Container and Spacing - COMPLETE FIX */
 .logoContainer {
   display: flex;
   align-items: center;
-  gap: 15px; /* Space between icon and text */
+  gap: 15px !important; /* Force the gap to apply */
   cursor: pointer;
   text-decoration: none;
+  flex-direction: row; /* Ensure horizontal layout */
 }
 
 .logoIcon {
   width: 40px;
   height: 40px;
   position: relative;
-  color: #D4AF37;
-  padding-right: 0; /* Remove the padding-right that was causing issues */
-  flex-shrink: 0; /* Prevent icon from shrinking */
+  display: flex; /* Add flex display */
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0; /* Prevent shrinking */
+  margin-right: 0 !important; /* Remove any margin */
+  padding-right: 0 !important; /* Remove any padding */
 }
 
-.logoIcon img {
-  width: auto;
-  height: 100%;
-  display: block;
-  object-fit: contain;
-}
-
-.logoIcon svg {
-  width: 100%;
-  height: 100%;
+.logoImage {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  display: block !important;
 }
 
 .logoText {
@@ -176,10 +174,26 @@
   font-weight: 700;
   color: #D4AF37;
   letter-spacing: 1px;
-  white-space: nowrap; /* Prevent text wrapping */
+  white-space: nowrap;
+  margin-left: 0 !important; /* Remove any left margin */
+  padding-left: 0 !important; /* Remove any left padding */
+  display: inline-block; /* Ensure it's inline-block */
 }
 
-/* Updated Nav Container Alignment */
+/* Debug - Remove any global styles that might affect spacing */
+.logoContainer * {
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* Ensure the link doesn't have default styles */
+.logoContainer:hover {
+  text-decoration: none;
+}
+
+
 .navContainer {
   display: flex;
   justify-content: space-between;
@@ -958,7 +972,7 @@
 /* Fix for very large screens */
 @media (min-width: 1440px) {
   .logoContainer {
-    gap: 20px; /* Larger gap on big screens */
+    gap: 20px !important;
   }
   
   .logoIcon {
@@ -975,7 +989,12 @@
 /* Tablet View (1024px and below) */
 @media (max-width: 1024px) {
   .logoContainer {
-    gap: 12px; /* Slightly smaller gap on tablets */
+    gap: 12px !important;
+  }
+  
+  .logoIcon {
+    width: 38px;
+    height: 38px;
   }
   
   .logoText {
@@ -1003,7 +1022,7 @@
 /* Mobile View (768px and below) */
 @media (max-width: 768px) {
   .logoContainer {
-    gap: 10px; /* Maintain visible gap on mobile */
+    gap: 10px !important;
   }
   
   .logoIcon {
@@ -1170,7 +1189,7 @@
 /* Small Mobile View (480px and below) */
 @media (max-width: 480px) {
   .logoContainer {
-    gap: 8px; /* Still maintain gap even on small screens */
+    gap: 8px !important;
   }
   
   .logoIcon {
@@ -1257,7 +1276,7 @@
 /* Extra Small Devices (360px and below) */
 @media (max-width: 360px) {
   .logoContainer {
-    gap: 6px; /* Smaller but still visible gap */
+    gap: 6px !important;
   }
   
   .logoIcon {

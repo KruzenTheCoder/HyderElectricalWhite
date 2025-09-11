@@ -34,16 +34,16 @@ export default function Navigation() {
       <div className={styles.navContainer}>
         <Link href="/" className={styles.logoContainer}>
           <div className={styles.logoIcon}>
-           <Image 
-            src="/logo.png" 
-            alt="Hyder Electrical Logo" 
-            width={40}
-            height={40}
-            priority
-            style={{ width: 'auto', height: '100%' }}
+            <Image 
+              src="/logo.png" 
+              alt="Hyder Electrical Logo" 
+              width={40}
+              height={40}
+              priority
+              className={styles.logoImage}
             />
           </div>
-          <div className={styles.logoText}>HYDER ELECTRICAL</div>
+          <span className={styles.logoText}>HYDER ELECTRICAL</span>
         </Link>
 
         <ul className={`${styles.navMenu} ${mobileMenuOpen ? styles.mobileMenuOpen : ''}`}>
