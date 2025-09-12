@@ -282,21 +282,27 @@
   transform: rotate(-45deg) translate(7px, -6px);
 }
 
-/* Mobile Menu Dropdown — CRITICAL FIX BELOW */
+/* MOBILE NAVIGATION — GLASS OVERLAY WITH WHITE TEXT + GOLD ACTIVE */
 @media (max-width: 768px) {
   .navMenu {
     display: none;
-    position: absolute;
+    position: fixed;
     top: 100%;
     left: 0;
     right: 0;
-    background: var(--midnight);
-    padding: 20px;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.1); /* Frosted glass base */
+    backdrop-filter: blur(20px); /* Strong blur for glass effect */
+    -webkit-backdrop-filter: blur(20px);
+    padding: 4rem 2rem 6rem;
     flex-direction: column;
-    gap: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    border-top: 1px solid rgba(212, 175, 55, 0.1);
-    animation: slideDown 0.3s ease;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 10px 50px rgba(0, 0, 0, 0.3);
+    z-index: 999;
+    animation: slideDown 0.4s ease-out forwards;
+    overflow-y: auto;
   }
 
   .navMenu.mobileMenuOpen {
@@ -307,26 +313,60 @@
     display: flex;
   }
 
-  .navLink {
-    padding: 10px 0;
-    border-bottom: 1px solid rgba(212, 175, 55, 0.05);
-    font-size: 12px;
-    width: fit-content;
+  /* Mobile Nav Links — WHITE BY DEFAULT, GOLD ON ACTIVE/HOVER */
+  .navMenu .navLink {
+    color: #ffffff !important; /* Pure white text for visibility */
+    font-size: 18px;
+    font-weight: 500;
+    text-align: center;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    width: 100%;
+    max-width: 280px;
+    transition: color 0.3s ease;
   }
 
-  .navLink:last-child {
+  .navMenu .navLink:hover,
+  .navMenu .navLink.active {
+    color: var(--gold) !important; /* Gold on hover/active */
+  }
+
+  .navMenu .navLink:last-child {
     border-bottom: none;
+  }
+
+  /* Optional: Add subtle glow on active link */
+  .navMenu .navLink.active {
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
   }
 
   @keyframes slideDown {
     from {
       opacity: 0;
-      transform: translateY(-10px);
+      transform: translateY(-20px);
     }
     to {
       opacity: 1;
       transform: translateY(0);
     }
+  }
+
+  /* Close menu if user scrolls or clicks outside (optional enhancement) */
+  .mobileOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 998;
+    display: none;
+  }
+
+  .mobileMenuOpen + .mobileOverlay {
+    display: block;
   }
 }
 
@@ -1171,7 +1211,7 @@
   }
 }
 
-/* Mobile View (768px and below) — MOBILE NAV IS DEFINED HERE */
+/* Mobile View (768px and below) — FULLY ENHANCED GLASS MOBILE NAV */
 @media (max-width: 768px) {
   .logoContainer {
     gap: 10px !important;
@@ -1197,17 +1237,23 @@
 
   .navMenu {
     display: none;
-    position: absolute;
+    position: fixed;
     top: 100%;
     left: 0;
     right: 0;
-    background: var(--midnight);
-    padding: 20px;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.1); /* Frosted glass base */
+    backdrop-filter: blur(20px); /* Strong blur for glass effect */
+    -webkit-backdrop-filter: blur(20px);
+    padding: 4rem 2rem 6rem;
     flex-direction: column;
-    gap: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    border-top: 1px solid rgba(212, 175, 55, 0.1);
-    animation: slideDown 0.3s ease;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 10px 50px rgba(0, 0, 0, 0.3);
+    z-index: 999;
+    animation: slideDown 0.4s ease-out forwards;
+    overflow-y: auto;
   }
 
   .navMenu.mobileMenuOpen {
@@ -1218,112 +1264,56 @@
     display: flex;
   }
 
-  .navLink {
-    padding: 10px 0;
-    border-bottom: 1px solid rgba(212, 175, 55, 0.05);
-    font-size: 12px;
-    width: fit-content;
-  }
-
-  .navLink:last-child {
-    border-bottom: none;
-  }
-
-  .heroSection {
-    padding: 40px 30px;
-  }
-
-  .heroTitle {
-    font-size: 48px;
-  }
-
-  .sectionTitle {
-    font-size: 36px;
-  }
-
-  .teamGrid {
-    grid-template-columns: 1fr;
-  }
-
-  .footerInfo {
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .contactInfo {
-    padding-right: 0;
-  }
-
-  .aboutSection {
-    padding: 50px 30px;
-  }
-  
-  .sectionHeader {
-    margin-bottom: 50px;
-  }
-
-  .sectionSubtitle {
-    font-size: 11px;
-    letter-spacing: 3px;
-  }
-  
-  .aboutGrid {
-    gap: 40px;
-    margin-bottom: 60px;
-  }
-  
-  .aboutContent h3 {
-    font-size: 28px;
-    margin-bottom: 20px;
-  }
-  
-  .aboutContent p {
-    font-size: 15px;
-    line-height: 1.8;
-    margin-bottom: 20px;
-  }
-  
-  .aboutStats {
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-    padding: 25px;
-  }
-  
-  .statNumber {
-    font-size: 36px;
-  }
-  
-  .statLabel {
-    font-size: 10px;
+  /* Mobile Nav Links — WHITE BY DEFAULT, GOLD ON ACTIVE/HOVER */
+  .navMenu .navLink {
+    color: #ffffff !important; /* Pure white text for visibility */
+    font-size: 18px;
+    font-weight: 500;
+    text-align: center;
     letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    width: 100%;
+    max-width: 280px;
+    transition: color 0.3s ease;
   }
 
-  /* Keep hamburger active state animation */
-  .mobileMenuBtn span:nth-child(1) {
-    transform-origin: center;
+  .navMenu .navLink:hover,
+  .navMenu .navLink.active {
+    color: var(--gold) !important; /* Gold on hover/active */
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
   }
-  .mobileMenuBtn span:nth-child(3) {
-    transform-origin: center;
-  }
-  .mobileMenuBtn.active span:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
-  }
-  .mobileMenuBtn.active span:nth-child(2) {
-    opacity: 0;
-  }
-  .mobileMenuBtn.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(7px, -6px);
+
+  .navMenu .navLink:last-child {
+    border-bottom: none;
   }
 
   @keyframes slideDown {
     from {
       opacity: 0;
-      transform: translateY(-10px);
+      transform: translateY(-20px);
     }
     to {
       opacity: 1;
       transform: translateY(0);
     }
+  }
+
+  /* Optional: Click-outside overlay to close menu */
+  .mobileOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 998;
+    display: none;
+  }
+
+  .mobileMenuOpen + .mobileOverlay {
+    display: block;
   }
 }
 
