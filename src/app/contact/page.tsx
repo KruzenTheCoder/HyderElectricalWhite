@@ -40,7 +40,7 @@ export default function Contact() {
               <PhoneIcon />
               <div className={styles.contactDetails}>
                 <h4>Direct Line</h4>
-                <p>071 671 8173</p>
+                <p>082 780 5434</p>
               </div>
             </div>
 

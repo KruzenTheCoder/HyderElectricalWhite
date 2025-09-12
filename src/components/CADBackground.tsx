@@ -25,9 +25,24 @@ export default function CADBackground() {
       <div className={`${styles.gridLayer} ${styles.layer2}`}></div>
       <div className={styles.circuitLines}>
         <svg width="100%" height="100%" style={{ position: 'absolute' }}>
-          <path className={styles.circuitPath} d="M0,100 L200,100 L250,50 L400,50" />
-          <path className={styles.circuitPath} d="M100,0 L100,200 L150,250 L150,400" />
-          <path className={styles.circuitPath} d="M300,0 L300,150 L350,200 L500,200" />
+          <path
+  className={styles.circuitPath}
+  d="M0,100 L200,100 L250,50 L400,50 L600,50 L650,100 L900,100 L950,60 L1200,60"
+/>
+<path
+  className={styles.circuitPath}
+  d="M100,0 L100,200 L150,250 L150,400 L150,600 L200,650 L200,800"
+/>
+<path
+  className={styles.circuitPath}
+  d="M300,0 L300,150 L350,200 L500,200 L700,200 L750,250 L1000,250"
+/>
+{/* New side-entry line */}
+<path
+  className={styles.circuitPath}
+  d="M0,300 L250,300 L300,350 L500,350 L550,300 L800,300 L850,340 L1200,340"
+/>
+
           <circle className={styles.circuitPath} cx="200" cy="100" r="5" fill="#D4AF37" opacity="0.3"/>
           <circle className={styles.circuitPath} cx="250" cy="50" r="5" fill="#D4AF37" opacity="0.3"/>
           <circle className={styles.circuitPath} cx="100" cy="200" r="5" fill="#D4AF37" opacity="0.3"/>

@@ -8,10 +8,11 @@ export default function Home() {
     <div className={styles.page}>
       <section className={styles.heroSection}>
         <div className={styles.heroContent}>
-          <div className={styles.heroSubtitle}>Excellence in Electrical Engineering</div>
+          <div className={styles.heroSubtitle}>Excellence in Contracting</div>
           <h1 className={styles.heroTitle}>Taking You Out of the Dark</h1>
           <p className={styles.heroDescription}>
-            A electrical engineering firm, 
+            An Electrical Turnkey Company,
+            that offer a turnkey design from initial Design to completed projects,
             specializing in high-end commercial, industrial, and infrastructure projects 
             across South Africa. With over 33 years of excellence, we illuminate possibilities.
           </p>

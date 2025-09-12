@@ -1,3 +1,5 @@
+/* src/app/globals.css */
+
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;500;600&display=swap');
 
 * {
@@ -7,16 +9,21 @@
 }
 
 :root {
-  --gold: #D4AF37;
-  --copper: #B87333;
-  --dark-navy: #1a1611; /* Changed from #0A0E27 - warmer dark brown */
-  --midnight: #0f0d08; /* Changed from #060818 - gold-tinted dark */
-  --steel: #71797E;
-  --white: #FFFFFF;
-  --grid-color: rgba(212, 175, 55, 0.1);
-  --line-color: rgba(212, 175, 55, 0.3);
-  --grid-color-light: rgba(212, 175, 55, 0.15);
-  --bg-color: #0a0804; /* Changed from #0b0b0b - warm black with gold tint */
+  /* 🎨 COLOR PALETTE — UPGRADED TO WHITE THEME */
+  --gold: #D4AF37;           /* KEEP YOUR GOLD — core accent */
+  --copper: #B87333;         /* secondary copper tone */
+  --dark-navy: #1a1611;      /* used ONLY in preloader background */
+  --midnight: #0f0d08;       /* used ONLY in preloader gradient & scrollbar */
+  --steel: #71797E;          /* unused in light theme — kept for consistency */
+  --white: #FFFFFF;          /* main background */
+  --foreground: #111827;     /* primary text — deep slate */
+  --secondary: #374151;      /* secondary text */
+  --muted: #6B7280;          /* muted text / placeholders */
+  --card-bg: #F9FAFB;        /* subtle card background */
+  --grid-color: rgba(212, 175, 55, 0.1);   /* gold grid lines */
+  --line-color: rgba(212, 175, 55, 0.3);   /* faint gold lines */
+  --grid-color-light: rgba(212, 175, 55, 0.15); /* lighter grid */
+  --bg-color: #FFFFFF;       /* MAIN BACKGROUND — NOW WHITE */
   --font-montserrat: 'Montserrat', sans-serif;
   --font-playfair: 'Playfair Display', serif;
 }
@@ -26,7 +33,7 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--midnight);
+  background: var(--white); /* Changed from midnight to white */
 }
 
 ::-webkit-scrollbar-thumb {
@@ -36,12 +43,16 @@
 
 body {
   font-family: 'Montserrat', sans-serif;
-  background: var(--bg-color); /* Now uses the warm black */
-  color: var(--white);
+  background: var(--bg-color); /* Now pure white */
+  color: var(--foreground);    /* Text is now dark slate, not white */
   overflow-x: hidden;
   position: relative;
   margin: 0;
   min-height: 100vh;
+
+  /* ✅ Font smoothing — keep this for crisp typography */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 html {
@@ -55,7 +66,7 @@ html {
   padding-top: 90px;
 }
 
-/* Rest of the animations remain the same */
+/* Rest of the animations remain the same — UNTOUCHED */
 @keyframes fadeIn {
   to {
     opacity: 1;

@@ -1,3 +1,5 @@
+// src/components/Loader.tsx
+
 'use client'
 
 import { useEffect, useState } from 'react'
@@ -10,27 +12,25 @@ export default function Loader() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false)
-    }, 3000)
+    }, 2000) // Match this with the fade duration
 
     return () => clearTimeout(timer)
   }, [])
 
-  if (!isLoading) return null
-
   return (
-    <div className={`${styles.loaderContainer} ${!isLoading ? styles.hidden : ''}`}>
+    <div className={`${styles.loaderContainer} ${isLoading ? '' : styles['fade-out']}`}>
       <div className={styles.loaderLogo}>
         <div className={styles.circleOuter}></div>
         <div className={styles.circleInner}></div>
         <div className={styles.loaderIconImage}>
-        <Image 
-                    src="/logo.png" 
-                    alt="Hyder Electrical Logo" 
-                    width={120}
-                    height={130}
-                    priority
-                    style={{ width: 'auto', height: '100%' }}
-         />
+          <Image 
+            src="/logo.png" 
+            alt="Hyder Electrical Logo" 
+            width={120}
+            height={130}
+            priority
+            style={{ width: 'auto', height: '100%' }}
+          />
         </div>
         <div className={styles.loaderText}>Hyder Electrical</div>
       </div>
