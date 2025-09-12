@@ -202,6 +202,7 @@
   max-width: 1400px;
   margin: 0 auto;
   width: 100%;
+  position: relative;
 }
 
 .navMenu {
@@ -249,6 +250,8 @@
   flex-direction: column;
   gap: 4px;
   cursor: pointer;
+  padding: 5px;
+  z-index: 1001;
 }
 
 .mobileMenuBtn span {
@@ -256,6 +259,75 @@
   height: 2px;
   background: var(--gold);
   transition: all 0.3s ease;
+  border-radius: 1px;
+}
+
+.mobileMenuBtn span:nth-child(1) {
+  transform-origin: center;
+}
+
+.mobileMenuBtn span:nth-child(3) {
+  transform-origin: center;
+}
+
+.mobileMenuBtn.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.mobileMenuBtn.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.mobileMenuBtn.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* Mobile Menu Dropdown — CRITICAL FIX BELOW */
+@media (max-width: 768px) {
+  .navMenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--midnight);
+    padding: 20px;
+    flex-direction: column;
+    gap: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border-top: 1px solid rgba(212, 175, 55, 0.1);
+    animation: slideDown 0.3s ease;
+  }
+
+  .navMenu.mobileMenuOpen {
+    display: flex;
+  }
+
+  .mobileMenuBtn {
+    display: flex;
+  }
+
+  .navLink {
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.05);
+    font-size: 12px;
+    width: fit-content;
+  }
+
+  .navLink:last-child {
+    border-bottom: none;
+  }
+
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 }
 
 /* Main Container */
@@ -1099,7 +1171,7 @@
   }
 }
 
-/* Mobile View (768px and below) */
+/* Mobile View (768px and below) — MOBILE NAV IS DEFINED HERE */
 @media (max-width: 768px) {
   .logoContainer {
     gap: 10px !important;
@@ -1132,6 +1204,10 @@
     background: var(--midnight);
     padding: 20px;
     flex-direction: column;
+    gap: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border-top: 1px solid rgba(212, 175, 55, 0.1);
+    animation: slideDown 0.3s ease;
   }
 
   .navMenu.mobileMenuOpen {
@@ -1140,6 +1216,17 @@
 
   .mobileMenuBtn {
     display: flex;
+  }
+
+  .navLink {
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.05);
+    font-size: 12px;
+    width: fit-content;
+  }
+
+  .navLink:last-child {
+    border-bottom: none;
   }
 
   .heroSection {
@@ -1211,39 +1298,23 @@
     letter-spacing: 1.5px;
   }
 
-  /* Mobile Menu Button Positioning Fix */
-  .navContainer {
-    position: relative;
+  /* Keep hamburger active state animation */
+  .mobileMenuBtn span:nth-child(1) {
+    transform-origin: center;
   }
-  
-  .mobileMenuBtn {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    cursor: pointer;
-    padding: 5px;
-    z-index: 1001;
+  .mobileMenuBtn span:nth-child(3) {
+    transform-origin: center;
   }
-  
-  .navMenu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background: #0f0d08;
-    padding: 20px;
-    flex-direction: column;
-    gap: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    border-top: 1px solid rgba(212, 175, 55, 0.1);
+  .mobileMenuBtn.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
   }
-  
-  .navMenu.mobileMenuOpen {
-    display: flex;
-    animation: slideDown 0.3s ease;
+  .mobileMenuBtn.active span:nth-child(2) {
+    opacity: 0;
   }
-  
+  .mobileMenuBtn.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+  }
+
   @keyframes slideDown {
     from {
       opacity: 0;
@@ -1253,16 +1324,6 @@
       opacity: 1;
       transform: translateY(0);
     }
-  }
-  
-  .navLink {
-    padding: 10px 0;
-    border-bottom: 1px solid rgba(212, 175, 55, 0.05);
-    font-size: 12px;
-  }
-  
-  .navLink:last-child {
-    border-bottom: none;
   }
 }
 
