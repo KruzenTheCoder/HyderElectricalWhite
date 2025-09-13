@@ -33,6 +33,7 @@ export default function Home() {
             <Link href="/contact#start" className={styles.primaryCTA}>
               Begin Your Project
             </Link>
+
             <Link href="tel:+27827805434" className={styles.secondaryCTA}>
               Emergency: 082&nbsp;780&nbsp;5434
             </Link>
@@ -42,6 +43,9 @@ export default function Home() {
             <li>40 years</li>
             <li>24/7 Emergency</li>
           </ul>
+
+          </div>
+
         </div>
       </section>
     </div>
