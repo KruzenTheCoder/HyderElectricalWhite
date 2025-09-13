@@ -1,5 +1,3 @@
-// src/components/Loader.tsx
-
 'use client'
 
 import { useEffect, useState } from 'react'
