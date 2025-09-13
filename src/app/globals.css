@@ -73,7 +73,7 @@ a:hover {
 
 a,
 button {
-  cursor: none;
+  cursor: none !important;
 }
 
 input,

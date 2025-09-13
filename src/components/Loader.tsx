@@ -92,7 +92,9 @@ export default function Loader() {
               />
             </div>
             <div className={styles.loaderText}>Hyder Electrical</div>
-            <div className={styles.loaderTagline}>Engineering Power Out of the Dark</div>
+            <div className={styles.loaderTagline}>
+              Engineering Power Out of the Dark
+            </div>
           </motion.div>
 
           <motion.div
