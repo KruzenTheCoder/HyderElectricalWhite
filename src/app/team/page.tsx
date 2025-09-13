@@ -13,7 +13,7 @@ const teamMembers = [
     initials: 'SO',
     name: 'Siphokuhle Osborne Nombela',
     title: 'Technical Engineer',
-    description: 'Certified Trade Tested Electrician with 18+ years mastering township reticulations, substations up to 132KVA, and complex industrial installations.'
+    description: 'Certified Trade Tested Electrician with 18+ years mastering township reticulations, substations up to 132 kV, and complex industrial installations.'
   },
   {
     initials: 'HK',

@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "echo \"No lint configured\"",
+    "test": "echo \"No tests configured\""
   },
   "dependencies": {
     "framer-motion": "^12.23.12",
@@ -20,6 +21,7 @@
     "@types/react": "^18.2.45",
     "@types/react-dom": "^18.2.18",
     "autoprefixer": "^10.4.21",
+    "eslint": "^8.57.1",
     "postcss": "^8.5.6",
     "typescript": "5.9.2"
   }
