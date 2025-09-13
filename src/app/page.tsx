@@ -3,6 +3,7 @@
 import styles from '@/styles/components.module.css'
 import Link from 'next/link'
 import { useRef } from 'react'
+import CADBackground from '@/components/CADBackground'
 
 export default function Home() {
   const heroRef = useRef<HTMLDivElement>(null)
@@ -18,10 +19,13 @@ export default function Home() {
 
   return (
     <div className={styles.page}>
+      {/* Background circuitry */}
+      <CADBackground />
+
       <section
         ref={heroRef}
         onPointerMove={handlePointerMove}
-        className={styles.heroSection}
+        className={`${styles.heroSection} ${styles.glassHero}`}
       >
         <div className={styles.heroContent}>
           <h2 className={styles.heroTagline}>Excellence in Contracting</h2>

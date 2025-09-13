@@ -392,29 +392,37 @@
 .heroSection {
   --x: 50%;
   --y: 50%;
-  min-height: calc(100vh - 90px);
+  position: relative;
+  z-index: 1;
+  padding: 6rem 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
-  padding: 60px;
-  background: radial-gradient(
-      600px circle at var(--x) var(--y),
-      rgba(255, 255, 255, 0.08),
-      transparent 40%
-    ),
-    var(--background);
-  backdrop-filter: blur(10px);
-  overflow: hidden;
+  text-align: center;
+  min-height: 100vh;
 }
-.heroSection::before {
+
+/* Glassmorphic hero overlay */
+.glassHero {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+}
+
+/* Cursor-tracking glow */
+.glassHero::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: url('/circuit-board.svg') center/cover no-repeat;
-  opacity: 0.1;
-  z-index: 0;
-  animation: circuitPulse 6s ease-in-out infinite;
+  background: radial-gradient(
+    circle at var(--x, 50%) var(--y, 50%),
+    rgba(255, 255, 255, 0.1),
+    transparent 60%
+  );
+  pointer-events: none;
 }
 
 .heroContent {
@@ -606,12 +614,13 @@
 /* CAD Background */
 .cadBackground {
   position: fixed;
-  width: 100%;
-  height: 100%;
   top: 0;
   left: 0;
+  width: 100%;
+  height: 100%;
   pointer-events: none;
-  z-index: 1;
+  z-index: 0;
+  overflow: hidden;
   filter: blur(2px);
 }
 
