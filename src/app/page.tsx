@@ -26,10 +26,8 @@ export default function Home() {
         <div className={styles.heroContent}>
           <h2 className={styles.heroTagline}>Excellence in Contracting</h2>
           <h1 className={styles.heroTitle}>Taking You Out of the Dark</h1>
-          <p className={styles.heroDescription}>
-            A turnkey electrical contractor. We design, install and commission high-voltage,
-            commercial and industrial systems across South Africa. With 40 years of excellence,
-            we illuminate possibilities.
+          <p className={`${styles.heroDescription} ${styles.typewriter}`}>
+            A turnkey electrical contractor. We design, install and commission high-voltage, commercial and industrial systems across South Africa. With 40 years of excellence, we illuminate possibilities.
           </p>
           <div className={styles.ctaGroup}>
             <Link href="/contact#start" className={styles.primaryCTA}>

@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Montserrat, Playfair_Display } from 'next/font/google'
+import { Work_Sans, Cinzel } from 'next/font/google'
 import './globals.css'
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
@@ -7,14 +7,14 @@ import CADBackground from '@/components/CADBackground'
 import Loader from '@/components/Loader'
 import CursorHalo from '@/components/CursorHalo'
 
-const montserrat = Montserrat({ 
+const workSans = Work_Sans({
   subsets: ['latin'],
-  variable: '--font-montserrat'
+  variable: '--font-work-sans'
 })
 
-const playfair = Playfair_Display({ 
+const cinzel = Cinzel({
   subsets: ['latin'],
-  variable: '--font-playfair'
+  variable: '--font-cinzel'
 })
 
 export const metadata: Metadata = {
@@ -29,7 +29,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${montserrat.variable} ${playfair.variable}`}>
+      <body className={`${workSans.variable} ${cinzel.variable}`}>
         <Loader />
         <CursorHalo />
         <CADBackground />
