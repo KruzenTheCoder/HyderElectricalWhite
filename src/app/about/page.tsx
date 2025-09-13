@@ -8,7 +8,7 @@ export default function About() {
       <section className={styles.aboutSection}>
         <div className={styles.sectionHeader}>
           <div className={styles.sectionSubtitle}>Our Story</div>
-          <h2 className={styles.sectionTitle}>Engineering Excellence Since 1985</h2>
+          <h2 className={styles.sectionTitle}>40 Years of Engineering Excellence</h2>
           <div className={styles.sectionDivider}></div>
         </div>
 
@@ -16,23 +16,20 @@ export default function About() {
           <div className={styles.aboutContent}>
             <h3>Empowering South Africa&apos;s Infrastructure</h3>
             <p>
-              Hyder Electrical PTY LTD stands as a beacon of excellence in the electrical engineering industry. 
-              As a 100% Black Female-Owned enterprise, we bring a unique perspective to every project, 
-              combining technical expertise with a deep understanding of community needs.
+              Established in 1985, Hyder Electrical (Pty) Ltd is a Level 1 B-BBEE, 100% Black Female-Owned contractor delivering safe,
+              on-time electrical works for public and private sector clients nationwide. 40 years of powering South Africa.
             </p>
             <p>
-              Our legacy spans from the transformation of Femto Electrical, established in 1985, 
-              into the powerhouse that is Hyder Electrical today. We&apos;ve illuminated hospitals, 
-              powered industrial complexes, and brought light to communities across South Africa.
+              We&apos;ve illuminated hospitals, powered industrial complexes, and brought light to communities across South Africa.
             </p>
             <p>
-              With expertise in high and low voltage systems up to 132KVA, we don&apos;t just install electrical systems – 
+              With expertise in high and low voltage systems up to 132 kV, we don&apos;t just install electrical systems –
               we engineer solutions that power progress and drive development.
             </p>
           </div>
           <div className={styles.aboutStats}>
             <div className={styles.statItem}>
-              <div className={styles.statNumber}>33+</div>
+              <div className={styles.statNumber}>40</div>
               <div className={styles.statLabel}>Years of Excellence</div>
             </div>
             <div className={styles.statItem}>
