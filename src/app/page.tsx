@@ -27,7 +27,7 @@ export default function Home() {
           <h2 className={styles.heroTagline}>Excellence in Contracting</h2>
           <h1 className={styles.heroTitle}>Taking You Out of the Dark</h1>
           <p className={styles.heroDescription}>
-            An Electrical Turnkey Company, that offer a turnkey design from initial Design to completed projects, specializing in high-end commercial, industrial, and infrastructure projects across South Africa. With over 33 years of excellence, we illuminate possibilities.
+            A turnkey electrical contractor. We design, install and commission high-voltage, commercial and industrial systems across South Africa. With 40 years of excellence, we illuminate possibilities.
           </p>
           <div className={styles.ctaGroup}>
             <Link href="/contact#start" className={styles.primaryCTA}>

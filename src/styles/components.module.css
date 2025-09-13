@@ -219,23 +219,6 @@
   }
 }
 
-/* Custom Cursor */
-.cursor {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 24px;
-  height: 24px;
-  border: 2px solid var(--gold);
-  border-radius: 50%;
-  pointer-events: none;
-  mix-blend-mode: difference;
-  background: rgba(212, 175, 55, 0.15);
-  box-shadow: 0 0 8px rgba(212, 175, 55, 0.6), 0 0 20px rgba(212, 175, 55, 0.3);
-  animation: cursor-pulse 1.5s ease-in-out infinite;
-  z-index: 10000;
-}
-
 /* Navigation Styles */
 .nav {
   position: fixed;
@@ -448,8 +431,8 @@
   white-space: nowrap;
   overflow: hidden;
   border-right: 2px solid var(--gold);
-  width: 0;
-  animation: tagline-type 2s steps(40, end) forwards, blink 0.5s step-end infinite;
+  width: 0ch;
+  animation: tagline-type 2s steps(25, end) forwards, blink 0.5s step-end infinite;
   color: var(--secondary);
 }
 
@@ -466,10 +449,10 @@
   -webkit-text-fill-color: transparent;
   opacity: 0;
   border-right: 2px solid var(--gold);
-  width: 0;
+  width: 0ch;
   white-space: nowrap;
   overflow: hidden;
-  animation: title-type 2.2s steps(40, end) 2s forwards, gradient-shift 4s linear 4.2s infinite, blink 0.5s step-end infinite 2s;
+  animation: title-type 2.2s steps(26, end) 2s forwards, gradient-shift 4s linear 4.2s infinite, blink 0.5s step-end infinite 2s;
 }
 
 .heroDescription {
@@ -489,14 +472,20 @@
 }
 
 @keyframes tagline-type {
+  from {
+    width: 0ch;
+  }
   to {
-    width: 100%;
+    width: 25ch;
   }
 }
 
 @keyframes title-type {
+  from {
+    width: 0ch;
+  }
   to {
-    width: 100%;
+    width: 26ch;
     opacity: 1;
   }
 }

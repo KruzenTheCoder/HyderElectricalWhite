@@ -9,7 +9,7 @@ export default function Loader() {
   const [show, setShow] = useState(true)
 
   useEffect(() => {
-    const timer = setTimeout(() => setShow(false), 5600)
+    const timer = setTimeout(() => setShow(false), 4000)
     return () => clearTimeout(timer)
   }, [])
 
@@ -19,13 +19,13 @@ export default function Loader() {
         <motion.div
           className={styles.loaderContainer}
           initial={{ opacity: 1 }}
-          animate={{ opacity: 0, transition: { duration: 1.4, delay: 4.2 } }}
+          animate={{ opacity: 0, transition: { duration: 1, delay: 3 } }}
           exit={{ opacity: 0 }}
         >
           <motion.div
             className={styles.loaderLogo}
             initial={{ scale: 1 }}
-            animate={{ scale: [1, 1.1, 0.8], transition: { duration: 2.8 } }}
+            animate={{ scale: [1, 1.1, 0.8], transition: { duration: 2.5 } }}
           >
             <span className={styles.lightSweep} />
             <div className={styles.circleOuter}></div>
@@ -42,7 +42,7 @@ export default function Loader() {
                 strokeLinecap="round"
                 initial={{ pathLength: 0 }}
                 animate={{ pathLength: 1 }}
-                transition={{ duration: 2.2, ease: 'easeInOut' }}
+                transition={{ duration: 2, ease: 'easeInOut' }}
               />
               <motion.circle
                 cx="10"
@@ -51,7 +51,7 @@ export default function Loader() {
                 fill="var(--gold)"
                 initial={{ opacity: 0, scale: 0 }}
                 animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 1 }}
+                transition={{ delay: 0.8 }}
               />
               <motion.circle
                 cx="70"
@@ -60,7 +60,7 @@ export default function Loader() {
                 fill="var(--gold)"
                 initial={{ opacity: 0, scale: 0 }}
                 animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 1.2 }}
+                transition={{ delay: 1 }}
               />
               <motion.circle
                 cx="110"
@@ -69,7 +69,7 @@ export default function Loader() {
                 fill="var(--gold)"
                 initial={{ opacity: 0, scale: 0 }}
                 animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 1.4 }}
+                transition={{ delay: 1.2 }}
               />
               <motion.circle
                 cx="190"
@@ -78,7 +78,7 @@ export default function Loader() {
                 fill="var(--gold)"
                 initial={{ opacity: 0, scale: 0 }}
                 animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 1.6 }}
+                transition={{ delay: 1.4 }}
               />
             </motion.svg>
             <div className={styles.loaderIconImage}>
@@ -98,7 +98,7 @@ export default function Loader() {
             className={styles.loaderFlash}
             initial={{ scale: 0, opacity: 0 }}
             animate={{ scale: [0, 1.5, 2], opacity: [0, 1, 0] }}
-            transition={{ delay: 2.8, duration: 0.8 }}
+            transition={{ delay: 2.5, duration: 0.5 }}
           />
           {['topLeft','topRight','bottomLeft','bottomRight'].map(pos => (
             <motion.svg
@@ -114,7 +114,7 @@ export default function Loader() {
                 strokeLinecap="round"
                 initial={{ pathLength: 0 }}
                 animate={{ pathLength: 1 }}
-                transition={{ duration: 4.8, ease: 'easeInOut' }}
+                transition={{ duration: 3, ease: 'easeInOut' }}
               />
             </motion.svg>
           ))}
