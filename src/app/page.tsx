@@ -8,13 +8,11 @@ export default function Home() {
     <div className={styles.page}>
       <section className={styles.heroSection}>
         <div className={styles.heroContent}>
-          <div className={styles.heroSubtitle}>Excellence in Contracting</div>
-          <h1 className={styles.heroTitle}>Taking You Out of the Dark</h1>
+          <div className={styles.heroSubtitle}>Turnkey Electrical Engineering</div>
+          <h1 className={styles.heroTitle}>Bringing Power Out of the Dark</h1>
           <p className={styles.heroDescription}>
-            An Electrical Turnkey Company,
-            that offer a turnkey design from initial Design to completed projects,
-            specializing in high-end commercial, industrial, and infrastructure projects 
-            across South Africa. With over 33 years of excellence, we illuminate possibilities.
+            From CAD precision to electrified reality, our end-to-end solutions light the path for
+            hospitals, industries, and infrastructure across South Africa.
           </p>
           <Link href="/contact" className={styles.luxuryButton}>
             Begin Your Project
