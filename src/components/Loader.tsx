@@ -9,7 +9,7 @@ export default function Loader() {
   const [show, setShow] = useState(true)
 
   useEffect(() => {
-    const timer = setTimeout(() => setShow(false), 4400)
+    const timer = setTimeout(() => setShow(false), 4600)
     return () => clearTimeout(timer)
   }, [])
 
@@ -19,10 +19,14 @@ export default function Loader() {
         <motion.div
           className={styles.loaderContainer}
           initial={{ opacity: 1 }}
-          animate={{ opacity: 0, transition: { duration: 1.4, delay: 3 } }}
+          animate={{ opacity: 0, transition: { duration: 1.4, delay: 3.2 } }}
           exit={{ opacity: 0 }}
         >
-          <div className={styles.loaderLogo}>
+          <motion.div
+            className={styles.loaderLogo}
+            initial={{ scale: 1 }}
+            animate={{ scale: [1, 1.1, 0.8], transition: { duration: 2.8 } }}
+          >
             <span className={styles.lightSweep} />
             <div className={styles.circleOuter}></div>
             <div className={styles.circleInner}></div>
@@ -89,7 +93,13 @@ export default function Loader() {
             </div>
             <div className={styles.loaderText}>Hyder Electrical</div>
             <div className={styles.loaderTagline}>Engineering Power Out of the Dark</div>
-          </div>
+          </motion.div>
+          <motion.div
+            className={styles.loaderFlash}
+            initial={{ scale: 0, opacity: 0 }}
+            animate={{ scale: [0, 1.5, 2], opacity: [0, 1, 0] }}
+            transition={{ delay: 2.8, duration: 0.8 }}
+          />
         </motion.div>
       )}
     </AnimatePresence>
