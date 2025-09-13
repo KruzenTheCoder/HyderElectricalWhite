@@ -24,23 +24,16 @@ export default function Home() {
         className={styles.heroSection}
       >
         <div className={styles.heroContent}>
+          <h2 className={styles.heroTagline}>Excellence in Contracting</h2>
           <h1 className={styles.heroTitle}>Taking You Out of the Dark</h1>
           <p className={styles.heroDescription}>
-            Turnkey electrical contracting—design to commissioning—for high-voltage (up to 132 kV), commercial and industrial projects across South Africa.
+            An Electrical Turnkey Company, that offer a turnkey design from initial Design to completed projects, specializing in high-end commercial, industrial, and infrastructure projects across South Africa. With over 33 years of excellence, we illuminate possibilities.
           </p>
           <div className={styles.ctaGroup}>
             <Link href="/contact#start" className={styles.primaryCTA}>
               Begin Your Project
             </Link>
-            <Link href="tel:+27827805434" className={styles.secondaryCTA}>
-              Emergency: 082 780 5434
-            </Link>
           </div>
-          <ul className={styles.trustChips}>
-            <li>Level 1 B-BBEE</li>
-            <li>40 years</li>
-            <li>24/7 Emergency</li>
-          </ul>
         </div>
       </section>
     </div>

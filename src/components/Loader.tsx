@@ -9,7 +9,7 @@ export default function Loader() {
   const [show, setShow] = useState(true)
 
   useEffect(() => {
-    const timer = setTimeout(() => setShow(false), 4600)
+    const timer = setTimeout(() => setShow(false), 5600)
     return () => clearTimeout(timer)
   }, [])
 
@@ -19,7 +19,7 @@ export default function Loader() {
         <motion.div
           className={styles.loaderContainer}
           initial={{ opacity: 1 }}
-          animate={{ opacity: 0, transition: { duration: 1.4, delay: 3.2 } }}
+          animate={{ opacity: 0, transition: { duration: 1.4, delay: 4.2 } }}
           exit={{ opacity: 0 }}
         >
           <motion.div
@@ -100,6 +100,24 @@ export default function Loader() {
             animate={{ scale: [0, 1.5, 2], opacity: [0, 1, 0] }}
             transition={{ delay: 2.8, duration: 0.8 }}
           />
+          {['topLeft','topRight','bottomLeft','bottomRight'].map(pos => (
+            <motion.svg
+              key={pos}
+              className={`${styles.cornerCircuit} ${styles[pos]}`}
+              viewBox="0 0 80 80"
+            >
+              <motion.path
+                d="M0 60h40v-40h40"
+                stroke="var(--copper)"
+                strokeWidth="2"
+                fill="none"
+                strokeLinecap="round"
+                initial={{ pathLength: 0 }}
+                animate={{ pathLength: 1 }}
+                transition={{ duration: 4.8, ease: 'easeInOut' }}
+              />
+            </motion.svg>
+          ))}
         </motion.div>
       )}
     </AnimatePresence>
