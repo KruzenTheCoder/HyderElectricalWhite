@@ -38,7 +38,7 @@ export default function Home() {
             </Link>
           </div>
           <ul className={styles.trustChips}>
-            <li>Level 1 B‑BBEE</li>
+            <li>Level 1 B-BBEE</li>
             <li>40 years</li>
             <li>24/7 Emergency</li>
           </ul>
