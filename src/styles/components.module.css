@@ -398,9 +398,7 @@
   justify-content: center;
   position: relative;
   padding: 60px;
-  background:
-    radial-gradient(650px circle at var(--x) var(--y), rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.2) 40%),
-    var(--background);
+  background: var(--background);
   backdrop-filter: blur(10px);
   overflow: hidden;
 }
@@ -427,13 +425,9 @@
   font-size: 20px;
   margin: 0 auto 20px;
   text-align: center;
-  display: inline-block;
-  white-space: nowrap;
-  overflow: hidden;
-  border-right: 2px solid var(--gold);
-  width: 0ch;
-  animation: tagline-type 2s steps(25, end) forwards, blink 0.5s step-end infinite;
   color: var(--secondary);
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
 }
 
 .heroTitle {
@@ -442,17 +436,13 @@
   line-height: 1.1;
   margin: 0 auto 30px;
   display: block;
-  background: linear-gradient(to right, #f5e27b, #d4af37, #b8860b);
-  background-size: 400px;
+  background: linear-gradient(90deg, #f5e27b, #d4af37, #b8860b);
+  background-size: 200% auto;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   opacity: 0;
-  border-right: 2px solid var(--gold);
-  width: 0ch;
-  white-space: nowrap;
-  overflow: hidden;
-  animation: title-type 2.2s steps(26, end) 2s forwards, gradient-shift 4s linear 4.2s infinite, blink 0.5s step-end infinite 2s;
+  animation: shine-text 6s linear infinite, fadeIn 1s ease 0.2s forwards;
 }
 
 .heroDescription {
@@ -462,40 +452,12 @@
   margin-bottom: 50px;
   font-weight: 300;
   opacity: 0;
-  animation: fadeIn 1s ease 4.5s forwards;
+  animation: fadeIn 1s ease 0.4s forwards;
 }
 
 @keyframes fadeIn {
   to {
     opacity: 1;
-  }
-}
-
-@keyframes tagline-type {
-  from {
-    width: 0ch;
-  }
-  to {
-    width: 25ch;
-  }
-}
-
-@keyframes title-type {
-  from {
-    width: 0ch;
-  }
-  to {
-    width: 26ch;
-    opacity: 1;
-  }
-}
-
-@keyframes gradient-shift {
-  from {
-    background-position: 0 0;
-  }
-  to {
-    background-position: 400px 0;
   }
 }
 

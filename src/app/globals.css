@@ -9,17 +9,17 @@
 }
 
 :root {
-/* 🎨 COLOR PALETTE — SLATE BACKDROP WITH GOLD ACCENTS */
+/* 🎨 COLOR PALETTE — LIGHT GLASS WITH GOLD ACCENTS */
   --gold: #D4AF37;           /* core accent */
   --copper: #B87333;         /* secondary copper tone */
   --dark-navy: #1a1611;      /* used ONLY in preloader background */
   --midnight: #0f0d08;       /* used ONLY in preloader gradient & scrollbar */
   --steel: #71797E;          /* legacy grey */
-  --background: #1e293b;     /* deep slate backdrop */
-  --foreground: #f8fafc;     /* light text */
-  --secondary: #cbd5e1;      /* muted slate text */
+  --background: #f8fafc;     /* light backdrop */
+  --foreground: #1e293b;     /* dark text */
+  --secondary: #475569;      /* muted slate text */
   --muted: #94A3B8;          /* muted slate */
-  --card-bg: rgba(255, 255, 255, 0.08); /* glass surfaces */
+  --card-bg: rgba(255, 255, 255, 0.6); /* glass surfaces */
   --grid-color: rgba(212, 175, 55, 0.15);   /* gold grid lines */
   --line-color: rgba(212, 175, 55, 0.25);   /* faint gold lines */
   --grid-color-light: rgba(212, 175, 55, 0.1); /* lighter grid */
