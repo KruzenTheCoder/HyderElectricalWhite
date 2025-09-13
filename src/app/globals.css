@@ -9,21 +9,21 @@
 }
 
 :root {
-  /* 🎨 COLOR PALETTE — UPGRADED TO WHITE THEME */
-  --gold: #D4AF37;           /* KEEP YOUR GOLD — core accent */
+/* 🎨 COLOR PALETTE — LIGHT GLASS WITH GOLD ACCENTS */
+  --gold: #D4AF37;           /* core accent */
   --copper: #B87333;         /* secondary copper tone */
   --dark-navy: #1a1611;      /* used ONLY in preloader background */
   --midnight: #0f0d08;       /* used ONLY in preloader gradient & scrollbar */
-  --steel: #71797E;          /* unused in light theme — kept for consistency */
-  --white: #FFFFFF;          /* main background */
-  --foreground: #111827;     /* primary text — deep slate */
-  --secondary: #374151;      /* secondary text */
-  --muted: #6B7280;          /* muted text / placeholders */
-  --card-bg: #F9FAFB;        /* subtle card background */
-  --grid-color: rgba(212, 175, 55, 0.1);   /* gold grid lines */
-  --line-color: rgba(212, 175, 55, 0.3);   /* faint gold lines */
-  --grid-color-light: rgba(212, 175, 55, 0.15); /* lighter grid */
-  --bg-color: #FFFFFF;       /* MAIN BACKGROUND — NOW WHITE */
+  --steel: #71797E;          /* legacy grey */
+  --background: #f8fafc;     /* light backdrop */
+  --foreground: #1e293b;     /* dark text */
+  --secondary: #475569;      /* muted slate text */
+  --muted: #94A3B8;          /* muted slate */
+  --card-bg: rgba(255, 255, 255, 0.6); /* glass surfaces */
+  --grid-color: rgba(212, 175, 55, 0.15);   /* gold grid lines */
+  --line-color: rgba(212, 175, 55, 0.25);   /* faint gold lines */
+  --grid-color-light: rgba(212, 175, 55, 0.1); /* lighter grid */
+  --bg-color: var(--background);           /* alias for convenience */
   --font-montserrat: 'Montserrat', sans-serif;
   --font-playfair: 'Playfair Display', serif;
 }
@@ -33,7 +33,7 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--white); /* Changed from midnight to white */
+  background: var(--background);
 }
 
 ::-webkit-scrollbar-thumb {
@@ -43,20 +43,42 @@
 
 body {
   font-family: 'Montserrat', sans-serif;
-  background: var(--bg-color); /* Now pure white */
-  color: var(--foreground);    /* Text is now dark slate, not white */
+  background: var(--bg-color);
+  color: var(--foreground);
   overflow-x: hidden;
   position: relative;
   margin: 0;
   min-height: 100vh;
 
-  /* ✅ Font smoothing — keep this for crisp typography */
+  /* Font smoothing for crisp typography */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  cursor: none;
 }
 
 html {
   scroll-behavior: smooth;
+}
+
+/* Anchor defaults */
+a {
+  color: var(--foreground);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--gold);
+}
+
+a,
+button {
+  cursor: none;
+}
+
+input,
+textarea,
+select {
+  cursor: text;
 }
 
 .main-container {
@@ -173,4 +195,14 @@ html {
   to {
     filter: drop-shadow(0 0 30px rgba(212, 175, 55, 0.8));
   }
+}
+
+@keyframes shine-text {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes grid-shimmer {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 0.4; }
 }
