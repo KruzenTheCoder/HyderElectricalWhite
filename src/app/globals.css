@@ -1,6 +1,6 @@
 /* src/app/globals.css */
 
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600&family=Cinzel:wght@400;700&display=swap');
 
 * {
   margin: 0;
@@ -24,9 +24,9 @@
   --grid-color: rgba(212, 175, 55, 0.15);   /* gold grid lines */
   --line-color: rgba(212, 175, 55, 0.25);   /* faint gold lines */
   --grid-color-light: rgba(212, 175, 55, 0.1); /* lighter grid */
-  --bg-color: var(--background);           /* alias for convenience */
-  --font-montserrat: 'Montserrat', sans-serif;
-  --font-playfair: 'Playfair Display', serif;
+  --bg-color: var(--background);            /* alias for convenience */
+  --font-work-sans: 'Work Sans', sans-serif;
+  --font-cinzel: 'Cinzel', serif;
 }
 
 ::-webkit-scrollbar {
@@ -43,7 +43,7 @@
 }
 
 body {
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--font-work-sans);
   background: var(--bg-color);
   color: var(--foreground);
   overflow-x: hidden;
