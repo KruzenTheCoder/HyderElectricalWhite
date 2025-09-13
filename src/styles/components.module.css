@@ -7,11 +7,12 @@
   left: 0;
   width: 100%;
   height: 100vh;
-  background: radial-gradient(circle at center, var(--dark-navy) 0%, var(--midnight) 100%);
+  background: #000;
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 10000;
+  overflow: hidden;
   transition: opacity 1.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -27,6 +28,17 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.lightSweep {
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 50%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.08);
+  transform: skewX(-20deg);
+  animation: sweep 1.5s ease-in-out 0.4s forwards;
 }
 
 .circleOuter {
@@ -79,6 +91,12 @@
   }
 }
 
+@keyframes sweep {
+  to {
+    left: 150%;
+  }
+}
+
 .lightningBolt {
   position: absolute;
   width: 60px;
@@ -118,6 +136,23 @@
   to {
     opacity: 1;
     transform: translateX(-50%) translateY(-10px);
+  }
+}
+
+@media (max-width: 480px) {
+  .loaderLogo {
+    width: 180px;
+    height: 180px;
+  }
+
+  .circleOuter {
+    width: 120px;
+    height: 120px;
+  }
+
+  .circleInner {
+    width: 80px;
+    height: 80px;
   }
 }
 
@@ -237,11 +272,21 @@
 .navLink:hover,
 .navLink.active {
   color: var(--gold);
+  animation: electric-glow 1.5s ease-in-out infinite alternate;
 }
 
 .navLink:hover::after,
 .navLink.active::after {
   width: 100%;
+}
+
+@keyframes electric-glow {
+  from {
+    text-shadow: 0 0 4px rgba(212, 175, 55, 0.4), 0 0 10px rgba(212, 175, 55, 0.2);
+  }
+  to {
+    text-shadow: 0 0 12px rgba(212, 175, 55, 0.8), 0 0 24px rgba(255, 255, 255, 0.6);
+  }
 }
 
 .mobileMenuBtn {
@@ -1400,14 +1445,6 @@
 }
 
 /* ======== TRANSITION ANIMATIONS — FADE FROM PRELOADER TO PAGE ======== */
-
-/* Fade out preloader */
-.loaderContainer.fade-out {
-  opacity: 0;
-  pointer-events: none;
-  transform: scale(1.05); /* Slight zoom-out for cinematic feel */
-  transition: opacity 1.4s ease-out, transform 1.4s ease-out, background 1.4s ease-out;
-}
 
 /* Fade in main content after preloader */
 .main-container {
