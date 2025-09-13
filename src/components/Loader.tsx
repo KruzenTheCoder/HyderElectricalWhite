@@ -9,7 +9,9 @@ export default function Loader() {
   const [show, setShow] = useState(true)
 
   useEffect(() => {
+
     // Show loader for 4.4 seconds for a more captivating experience
+
     const timer = setTimeout(() => setShow(false), 4400)
     return () => clearTimeout(timer)
   }, [])
@@ -31,7 +33,14 @@ export default function Loader() {
             <span className={styles.lightSweep} />
             <div className={styles.circleOuter}></div>
             <div className={styles.circleInner}></div>
+
+            <motion.svg
+              className={styles.circuitBoard}
+              viewBox="0 0 200 200"
+            >
+
             <motion.svg className={styles.circuitBoard} viewBox="0 0 200 200">
+
               <motion.path
                 d="M10 150h60v-40h40v-40h80"
                 stroke="var(--copper)"
@@ -91,10 +100,15 @@ export default function Loader() {
               />
             </div>
             <div className={styles.loaderText}>Hyder Electrical</div>
+
+            <div className={styles.loaderTagline}>Engineering Power Out of the Dark</div>
+          </motion.div>
+
             <div className={styles.loaderTagline}>
               Engineering Power Out of the Dark
             </div>
           </motion.div>
+
 
           <motion.div
             className={styles.loaderFlash}
@@ -103,7 +117,11 @@ export default function Loader() {
             transition={{ delay: 2.5, duration: 0.5 }}
           />
 
+          {['topLeft','topRight','bottomLeft','bottomRight'].map(pos => (
+
+
           {['topLeft', 'topRight', 'bottomLeft', 'bottomRight'].map((pos) => (
+
             <motion.svg
               key={pos}
               className={`${styles.cornerCircuit} ${styles[pos]}`}
