@@ -87,9 +87,9 @@ export default function Contact() {
               <label className={styles.formLabel}>Project Details</label>
             </div>
 
-            <button type="submit" className={`${styles.luxuryButton} ${formSubmitted ? styles.submitted : ''}`}>
-              {formSubmitted ? 'Thank You' : 'Submit Inquiry'}
-            </button>
+              <button type="submit" className={`${styles.primaryCTA} ${formSubmitted ? styles.submitted : ''}`}> 
+                {formSubmitted ? 'Thank You' : 'Submit Inquiry'}
+              </button>
           </form>
         </div>
       </section>

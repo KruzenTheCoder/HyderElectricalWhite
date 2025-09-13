@@ -8,7 +8,7 @@ export default function Footer() {
       <div className={styles.footerInfo}>
         <div className={styles.footerInfoItem}>100% Black Female Owned</div>
         <div className={styles.footerInfoItem}>Level 1 B-BBEE</div>
-        <div className={styles.footerInfoItem}>33+ Years Excellence</div>
+        <div className={styles.footerInfoItem}>40 Years Excellence</div>
       </div>
       <div className={styles.copyright}>© 2025 Hyder Electrical PTY LTD. All Rights Reserved.</div>
     </footer>
