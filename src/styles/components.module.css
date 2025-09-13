@@ -1,4 +1,4 @@
-/* This file would contain all the component-specific styles from your original CSS */
+/* This file contains all the component-specific styles from your original CSS */
 
 /* Loader Styles */
 .loaderContainer {
@@ -69,32 +69,24 @@
 }
 
 @keyframes pulse-rotate {
-  0% {
-    transform: rotate(0deg) scale(1);
-    opacity: 0.8;
-  }
-  50% {
-    transform: rotate(180deg) scale(1.1);
-    opacity: 1;
-  }
-  100% {
-    transform: rotate(360deg) scale(1);
-    opacity: 0.8;
-  }
+  0% { transform: rotate(0deg) scale(1); opacity: 0.8; }
+  50% { transform: rotate(180deg) scale(1.1); opacity: 1; }
+  100% { transform: rotate(360deg) scale(1); opacity: 0.8; }
 }
 
 @keyframes pulse-rotate-reverse {
-  0% {
-    transform: rotate(360deg) scale(1);
-    opacity: 0.6;
-  }
-  50% {
-    transform: rotate(180deg) scale(0.9);
-    opacity: 1;
-  }
-  100% {
-    transform: rotate(0deg) scale(1);
-    opacity: 0.6;
+  0% { transform: rotate(360deg) scale(1); opacity: 0.6; }
+  50% { transform: rotate(180deg) scale(0.9); opacity: 1; }
+  100% { transform: rotate(0deg) scale(1); opacity: 0.6; }
+}
+
+@keyframes sweep {
+  to { left: 150%; }
+}
+
+@keyframes sweep {
+  to {
+    left: 150%;
   }
 }
 
@@ -125,6 +117,7 @@
 }
 
 .loaderFlash {
+
   position: absolute;
   width: 200px;
   height: 200px;
@@ -187,6 +180,7 @@
   left: 50%;
   transform: translateX(-50%);
   font-family: var(--font-cinzel);
+  font-family: var(--font-playfair);
   font-size: 16px;
   letter-spacing: 4px;
   color: var(--secondary);
@@ -317,6 +311,9 @@
   position: relative;
   transition: color 0.3s ease;
   font-family: var(--font-work-sans); /* Explicitly set Work Sans for nav links */
+
+  font-family: 'Montserrat', sans-serif; /* Explicitly set Montserrat for nav links */
+
 }
 
 .navLink::after {
@@ -441,7 +438,11 @@
   line-height: 1.1;
   margin: 0 auto 30px;
   display: block;
+
   background: linear-gradient(120deg, #fff4b0 0%, var(--gold) 50%, #b8860b 100%);
+
+  background: linear-gradient(90deg, #f5e27b, #d4af37, #b8860b);
+
   background-size: 200% auto;
   -webkit-background-clip: text;
   background-clip: text;
@@ -458,6 +459,7 @@
   font-weight: 300;
   opacity: 0;
   animation: fadeIn 1s ease 0.4s forwards;
+
 }
 
 .typewriter {
@@ -474,6 +476,7 @@
   to {
     width: 100%;
   }
+
 }
 
 @keyframes fadeIn {
@@ -512,6 +515,7 @@
   flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
+
 }
 
 .ctaGroup > a {
@@ -551,6 +555,26 @@
 
 .primaryCTA:hover {
   background-position: 100% 0;
+  opacity: 0;
+  animation: fadeIn 1s ease 5.2s forwards;
+}
+
+
+.primaryCTA {
+  padding: 18px 32px;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+  border: 1px solid var(--gold);
+  transition: all 0.3s ease;
+  background: linear-gradient(90deg, var(--gold), var(--copper));
+  color: var(--midnight);
+}
+
+.primaryCTA:hover {
+  background: linear-gradient(90deg, var(--copper), var(--gold));
+
   border-color: var(--copper);
 }
 .submitted {
@@ -577,6 +601,41 @@
   background-position: 100% 0;
   border-color: var(--gold);
   color: var(--midnight);
+=======
+  font-family: 'Montserrat', sans-serif;
+  border: 1px solid var(--line-color);
+  color: var(--foreground);
+  background: rgba(255,255,255,0.1);
+  transition: all 0.3s ease;
+}
+
+.secondaryCTA:hover {
+  background: rgba(255,255,255,0.2);
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+.trustChips {
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  opacity: 0;
+  animation: fadeIn 1s ease 1.3s forwards;
+}
+
+.trustChips li {
+  padding: 6px 14px;
+  font-size: 12px;
+  border: 1px solid var(--line-color);
+  border-radius: 9999px;
+  background: var(--card-bg);
+  backdrop-filter: blur(4px);
+  color: var(--secondary);
+
 }
 
 .trustChips {
@@ -954,36 +1013,7 @@
   height: calc(100% + 2px);
   border: 1px solid rgba(212, 175, 55, 0.15);
   border-radius: inherit;
-  pointer-events: none;
-  z-index: 2;
-  background: linear-gradient(
-    90deg,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 0.1) 25%,   /* subtle start */
-    rgba(255, 255, 255, 0.6) 50%,   /* harsh middle */
-    rgba(255, 255, 255, 0.1) 75%,   /* subtle end */
-    rgba(255, 255, 255, 0) 100%
-  );
-  background-size: 200% 100%;
-  animation: shineMove 2s linear infinite;
-  mix-blend-mode: screen;
-}
 
-@keyframes shineMove {
-  0% {
-    background-position: -100% 0;
-  }
-  100% {
-    background-position: 100% 0;
-  }
-}
-
-.projectItem:hover {
-  transform: scale(1.02);
-  border-color: var(--gold);
-}
-
-.projectDetails {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -1025,26 +1055,38 @@
   text-transform: uppercase;
   color: var(--gold);
   font-family: var(--font-work-sans);
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.9) 0%, rgba(212, 175, 55, 0) 60%);
+  filter: blur(20px);
+
+  pointer-events: none;
+  opacity: 0;
 }
 
-/* Team Section */
-.teamSection {
-  padding: 80px 60px;
-  max-width: 1400px;
-  margin: 0 auto;
-  background: var(--background); /* ← Now white */
+.cornerCircuit {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  opacity: 0.3;
 }
 
-.teamGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 60px;
-  margin-top: 80px;
+.topLeft {
+  top: 20px;
+  left: 20px;
 }
 
-.teamMember {
-  text-align: center;
-  position: relative;
+.topRight {
+  top: 20px;
+  right: 20px;
+  transform: scaleX(-1);
+}
+
+.bottomLeft {
+  bottom: 20px;
+  left: 20px;
+  transform: scaleY(-1);
 }
 
 .memberImage {
@@ -1060,11 +1102,18 @@
   font-family: var(--font-cinzel);
   font-size: 48px;
   color: var(--midnight);
+  
+.bottomRight {
+  bottom: 20px;
+  right: 20px;
+  transform: scale(-1);
+
 }
 
-.memberImage::before {
-  content: '';
+.loaderText {
+  white-space: nowrap;
   position: absolute;
+
   width: 220px;
   height: 220px;
   border: 1px solid rgba(212, 175, 55, 0.2);
@@ -1084,6 +1133,13 @@
   font-family: var(--font-work-sans);
   font-size: 14px;
   letter-spacing: 2px;
+  bottom: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-playfair);
+  font-size: 22px;
+  letter-spacing: 8px;
+  color: var(--gold);
   text-transform: uppercase;
   color: var(--copper);
   margin-bottom: 25px;
@@ -1231,6 +1287,18 @@
 
 .footerLogo {
   font-family: var(--font-cinzel);
+  opacity: 0;
+  animation: fadeInUp 1s ease 0.5s forwards;
+
+}
+
+.loaderTagline {
+  white-space: nowrap;
+  position: absolute;
+  bottom: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-playfair);
   font-size: 32px;
   color: var(--gold);
   margin-bottom: 20px;
@@ -1487,138 +1555,68 @@
   
   .navLink:last-child {
     border-bottom: none;
+  font-size: 16px;
+  letter-spacing: 4px;
+  color: var(--secondary);
+  text-transform: uppercase;
+  opacity: 0;
+  animation: fadeInUp 1s ease 1.5s forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-10px);
+
   }
 }
 
-/* Small Mobile View (480px and below) */
 @media (max-width: 480px) {
-  .logoContainer {
-    gap: 8px !important;
-  }
-  
-  .logoIcon {
-    width: 30px;
-    height: 30px;
-  }
-  
-  .logoText {
-    font-size: 16px;
-    letter-spacing: 0.3px;
-  }
-  
-  .nav {
-    padding: 15px 20px;
-  }
-  
-  .nav.scrolled {
-    padding: 10px 20px;
+  .loaderLogo {
+    width: 180px;
+    height: 180px;
   }
 
-  .aboutSection {
-    padding: 40px 20px;
+  .circleOuter {
+    width: 120px;
+    height: 120px;
   }
-  
-  .sectionTitle {
-    font-size: 28px;
-    line-height: 1.2;
-  }
-  
-  .sectionSubtitle {
-    font-size: 10px;
-    letter-spacing: 2px;
-    margin-bottom: 15px;
-  }
-  
-  .sectionDivider {
+
+  .circleInner {
     width: 80px;
-  }
-  
-  .aboutGrid {
-    gap: 30px;
-    margin-bottom: 40px;
-  }
-  
-  .aboutContent h3 {
-    font-size: 24px;
-    margin-bottom: 15px;
-    line-height: 1.3;
-  }
-  
-  .aboutContent p {
-    font-size: 14px;
-    line-height: 1.7;
-    margin-bottom: 15px;
-  }
-  
-  .aboutStats {
-    grid-template-columns: 1fr; /* Stack stats vertically on very small screens */
-    gap: 20px;
-    padding: 20px;
-    border-radius: 8px;
-  }
-  
-  .statItem {
-    padding: 10px 0;
-    border-bottom: 1px solid rgba(212, 175, 55, 0.1);
-  }
-  
-  .statItem:last-child {
-    border-bottom: none;
-  }
-  
-  .statNumber {
-    font-size: 32px;
-    margin-bottom: 5px;
-  }
-  
-  .statLabel {
-    font-size: 9px;
-    letter-spacing: 1px;
+    height: 80px;
   }
 }
 
-/* Extra Small Devices (360px and below) */
-@media (max-width: 360px) {
-  .logoContainer {
-    gap: 6px !important;
+/* Halo cursor */
+.cursorHalo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+}
+
+.cursorHalo span {
+  display: block;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.35) 0%, rgba(212, 175, 55, 0) 60%);
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.6);
+  animation: haloPulse 2s ease-in-out infinite;
+}
+
+@keyframes haloPulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.6;
   }
-  
-  .logoIcon {
-    width: 25px;
-    height: 25px;
-  }
-  
-  .logoText {
-    font-size: 14px;
-    letter-spacing: 0;
-  }
-  
-  .nav {
-    padding: 12px 15px;
-  }
-  
-  .nav.scrolled {
-    padding: 8px 15px;
-  }
-  
-  .aboutSection {
-    padding: 30px 15px;
-  }
-  
-  .sectionTitle {
-    font-size: 24px;
-  }
-  
-  .aboutContent h3 {
-    font-size: 20px;
-  }
-  
-  .aboutContent p {
-    font-size: 13px;
-  }
-  
-  .statNumber {
-    font-size: 28px;
+  50% {
+    transform: scale(1.4);
+    opacity: 1;
   }
 }
 
@@ -1657,9 +1655,12 @@
 /* ======== TRANSITION ANIMATIONS — FADE FROM PRELOADER TO PAGE ======== */
 
 /* Fade in main content after preloader */
+
+/* ... (rest of the file remains unchanged and already correctly structured) ... */
+
 .main-container {
   opacity: 0;
-  animation: fadeInPage 1.2s ease-out 1.6s forwards; /* Starts 1.6s after load */
+  animation: fadeInPage 1.2s ease-out 1.6s forwards;
 }
 
 @keyframes fadeInPage {
