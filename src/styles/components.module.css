@@ -398,7 +398,12 @@
   justify-content: center;
   position: relative;
   padding: 60px;
-  background: var(--background);
+  background: radial-gradient(
+      600px circle at var(--x) var(--y),
+      rgba(255, 255, 255, 0.08),
+      transparent 40%
+    ),
+    var(--background);
   backdrop-filter: blur(10px);
   overflow: hidden;
 }
@@ -458,6 +463,15 @@
 @keyframes fadeIn {
   to {
     opacity: 1;
+  }
+}
+
+@keyframes shine-text {
+  from {
+    background-position: 0% 50%;
+  }
+  to {
+    background-position: 200% 50%;
   }
 }
 
@@ -1548,6 +1562,38 @@
   
   .statNumber {
     font-size: 28px;
+  }
+}
+
+/* Halo cursor */
+.cursorHalo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+}
+
+.cursorHalo span {
+  display: block;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.35) 0%, rgba(212, 175, 55, 0) 60%);
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.6);
+  animation: haloPulse 2s ease-in-out infinite;
+}
+
+@keyframes haloPulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.4);
+    opacity: 1;
   }
 }
 

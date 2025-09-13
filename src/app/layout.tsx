@@ -5,6 +5,7 @@ import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
 import CADBackground from '@/components/CADBackground'
 import Loader from '@/components/Loader'
+import CursorHalo from '@/components/CursorHalo'
 
 const montserrat = Montserrat({ 
   subsets: ['latin'],
@@ -30,6 +31,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${montserrat.variable} ${playfair.variable}`}>
         <Loader />
+        <CursorHalo />
         <CADBackground />
         <Navigation />
         <main className="main-container">

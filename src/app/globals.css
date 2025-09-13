@@ -53,6 +53,7 @@ body {
   /* Font smoothing for crisp typography */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  cursor: none;
 }
 
 html {
@@ -67,6 +68,17 @@ a {
 
 a:hover {
   color: var(--gold);
+}
+
+a,
+button {
+  cursor: none;
+}
+
+input,
+textarea,
+select {
+  cursor: text;
 }
 
 .main-container {
