@@ -200,7 +200,8 @@
   border-radius: 50%;
   pointer-events: none;
   mix-blend-mode: difference;
-  box-shadow: 0 0 8px rgba(212, 175, 55, 0.6);
+  background: rgba(212, 175, 55, 0.15);
+  box-shadow: 0 0 8px rgba(212, 175, 55, 0.6), 0 0 20px rgba(212, 175, 55, 0.3);
   animation: cursor-pulse 1.5s ease-in-out infinite;
   z-index: 10000;
 }
@@ -230,7 +231,6 @@
   display: flex;
   align-items: center;
   gap: 15px !important; /* Force the gap to apply */
-  cursor: pointer;
   text-decoration: none;
   flex-direction: row; /* Ensure horizontal layout */
 }
@@ -303,7 +303,6 @@
   text-transform: uppercase;
   position: relative;
   transition: color 0.3s ease;
-  cursor: pointer;
   font-family: 'Montserrat', sans-serif; /* Explicitly set Montserrat for nav links */
 }
 
@@ -342,7 +341,6 @@
   display: none;
   flex-direction: column;
   gap: 4px;
-  cursor: pointer;
 }
 
 .mobileMenuBtn span {
@@ -395,6 +393,7 @@
   inset: 0;
   background: url('/circuit-board.svg') center/cover no-repeat;
   opacity: 0.06;
+  filter: blur(4px);
   z-index: 0;
 }
 
@@ -462,7 +461,6 @@
   transition: all 0.5s ease;
   opacity: 0;
   animation: fadeIn 1s ease 1.1s forwards;
-  cursor: pointer;
   font-family: 'Montserrat', sans-serif; /* Consistent button font */
 }
 
@@ -501,6 +499,7 @@
   left: 0;
   pointer-events: none;
   z-index: 1;
+  filter: blur(2px);
 }
 
 .gridLayer {
@@ -704,8 +703,10 @@
 
 .serviceCard {
   padding: 50px 40px;
-  background: linear-gradient(135deg, rgba(212, 175, 55, 0.03) 0%, rgba(184, 115, 51, 0.03) 100%);
-  border: 1px solid rgba(212, 175, 55, 0.1);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.06) 0%, rgba(212, 175, 55, 0.08) 100%);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   position: relative;
   overflow: hidden;
   transition: all 0.5s ease;
@@ -783,7 +784,6 @@
   font-size: 11px;
   letter-spacing: 2px;
   text-transform: uppercase;
-  cursor: pointer;
   transition: all 0.3s ease;
   font-family: 'Montserrat', sans-serif;
 }
@@ -806,33 +806,32 @@
   height: 400px;
   background: linear-gradient(
     135deg,
-    rgba(212, 175, 55, 0.12) 0%,  
-    rgba(245, 245, 245, 0.7) 30%, 
-    rgba(10, 14, 39, 0.3) 100%
+    rgba(212, 175, 55, 0.15) 0%,
+    rgba(255, 255, 255, 0.08) 50%,
+    rgba(0, 0, 0, 0.25) 100%
   );
   border: 1px solid rgba(212, 175, 55, 0.15);
   overflow: hidden;
-  cursor: pointer;
   transition: all 0.5s ease;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 }
 
-.projectItem::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    to bottom,
-    transparent 50%,
-    rgba(245, 245, 245, 0.2) 80%,
-    rgba(10, 14, 39, 0.15) 100%
-  );
-  z-index: 1;
-}
+  .projectItem::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      to bottom,
+      transparent 50%,
+      rgba(245, 245, 245, 0.2) 80%,
+      rgba(0, 0, 0, 0.15) 100%
+    );
+    z-index: 1;
+  }
 
 /* Moving shine along the thin gold border with subtle → harsh effect */
 .projectItem::after {
@@ -1334,7 +1333,6 @@
     display: flex;
     flex-direction: column;
     gap: 4px;
-    cursor: pointer;
     padding: 5px;
     z-index: 1001;
   }

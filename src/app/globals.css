@@ -15,7 +15,7 @@
   --dark-navy: #1a1611;      /* used ONLY in preloader background */
   --midnight: #0f0d08;       /* used ONLY in preloader gradient & scrollbar */
   --steel: #71797E;          /* legacy grey */
-  --background: #1F2937;     /* rich slate background */
+  --background: #2B2B2B;     /* neutral slate background */
   --foreground: #F1F5F9;     /* near-white text */
   --secondary: #CBD5E1;      /* softer slate text */
   --muted: #94A3B8;          /* muted slate */
@@ -58,6 +58,26 @@ body {
 
 html {
   scroll-behavior: smooth;
+}
+
+/* Hide native pointer even on interactive elements */
+html, body, body * {
+  cursor: none;
+}
+
+/* Anchor defaults */
+a {
+  color: var(--foreground);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--gold);
+}
+
+/* Restore text cursor for inputs */
+input, textarea {
+  cursor: text;
 }
 
 .main-container {
