@@ -7,7 +7,7 @@ const services = [
   {
     icon: <LightningIcon />,
     title: 'High Voltage Systems',
-    description: 'Specialized installation and maintenance of high voltage distribution systems up to 132KVA, including main substations and switch yards with PLC control systems.'
+    description: 'Specialized installation and maintenance of high voltage distribution systems up to 132 kV, including main substations and switch yards with PLC control systems.'
   },
   {
     icon: <ServerIcon />,
