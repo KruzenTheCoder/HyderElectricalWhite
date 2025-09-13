@@ -10,7 +10,7 @@
 }
 
 :root {
-/* 🎨 COLOR PALETTE — LIGHT GLASS WITH GOLD ACCENTS */
+  /* 🎨 COLOR PALETTE — LIGHT GLASS WITH GOLD ACCENTS */
   --gold: #D4AF37;           /* core accent */
   --copper: #B87333;         /* secondary copper tone */
   --dark-navy: #1a1611;      /* used ONLY in preloader background */
@@ -24,7 +24,7 @@
   --grid-color: rgba(212, 175, 55, 0.15);   /* gold grid lines */
   --line-color: rgba(212, 175, 55, 0.25);   /* faint gold lines */
   --grid-color-light: rgba(212, 175, 55, 0.1); /* lighter grid */
-  --bg-color: var(--background);           /* alias for convenience */
+  --bg-color: var(--background);            /* alias for convenience */
   --font-work-sans: 'Work Sans', sans-serif;
   --font-cinzel: 'Cinzel', serif;
 }
@@ -54,6 +54,7 @@ body {
   /* Font smoothing for crisp typography */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  cursor: none;
 }
 
 html {
@@ -69,7 +70,6 @@ a {
 a:hover {
   color: var(--gold);
 }
-
 
 a,
 button {
@@ -89,7 +89,7 @@ select {
   padding-top: 90px;
 }
 
-/* Rest of the animations remain the same — UNTOUCHED */
+/* ✨ Animations */
 @keyframes fadeIn {
   to {
     opacity: 1;

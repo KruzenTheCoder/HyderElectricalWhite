@@ -26,9 +26,14 @@ export default function Home() {
         <div className={styles.heroContent}>
           <h2 className={styles.heroTagline}>Excellence in Contracting</h2>
           <h1 className={styles.heroTitle}>Taking You Out of the Dark</h1>
+
+          {/* The hero description now uses the typewriter effect */}
           <p className={`${styles.heroDescription} ${styles.typewriter}`}>
-            A turnkey electrical contractor. We design, install and commission high-voltage, commercial and industrial systems across South Africa. With 40 years of excellence, we illuminate possibilities.
+            A turnkey electrical contractor. We design, install and commission
+            high-voltage, commercial and industrial systems across South Africa.
+            With 40 years of excellence, we illuminate possibilities.
           </p>
+
           <div className={styles.ctaGroup}>
             <Link href="/contact#start" className={styles.primaryCTA}>
               Begin Your Project
@@ -37,8 +42,9 @@ export default function Home() {
               Emergency: 082&nbsp;780&nbsp;5434
             </Link>
           </div>
+
           <ul className={styles.trustChips}>
-            <li>Level 1 B‑BBEE</li>
+            <li>Level 1 B-BBEE</li>
             <li>40 years</li>
             <li>24/7 Emergency</li>
           </ul>
