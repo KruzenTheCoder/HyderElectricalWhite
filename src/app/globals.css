@@ -10,7 +10,7 @@
 }
 
 :root {
-/* 🎨 COLOR PALETTE — LIGHT GLASS WITH GOLD ACCENTS */
+  /* 🎨 COLOR PALETTE — LIGHT GLASS WITH GOLD ACCENTS */
   --gold: #D4AF37;           /* core accent */
   --copper: #B87333;         /* secondary copper tone */
   --dark-navy: #1a1611;      /* used ONLY in preloader background */
@@ -89,7 +89,7 @@ select {
   padding-top: 90px;
 }
 
-/* Rest of the animations remain the same — UNTOUCHED */
+/* ✨ Animations */
 @keyframes fadeIn {
   to {
     opacity: 1;
