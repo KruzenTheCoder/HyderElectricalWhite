@@ -377,23 +377,26 @@
 /* Hero Section */
 
 .heroSection {
+  --x: 50%;
+  --y: 50%;
   min-height: calc(100vh - 90px);
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
   padding: 60px;
-  background: var(--background);
+  background:
+    radial-gradient(650px circle at var(--x) var(--y), rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.2) 40%),
+    var(--background);
+  backdrop-filter: blur(10px);
   overflow: hidden;
 }
-
 .heroSection::before {
   content: '';
   position: absolute;
   inset: 0;
   background: url('/circuit-board.svg') center/cover no-repeat;
-  opacity: 0.06;
-  filter: blur(4px);
+  opacity: 0.1;
   z-index: 0;
 }
 
@@ -402,17 +405,7 @@
   max-width: 900px;
   position: relative;
   z-index: 1;
-}
-
-.heroSubtitle {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 14px;
-  letter-spacing: 4px;
-  color: var(--gold);
-  text-transform: uppercase;
-  margin-bottom: 30px;
-  opacity: 0;
-  animation: fadeIn 1s ease 0.5s forwards;
+/* heroSubtitle removed */
 }
 
 .heroTitle {
@@ -446,48 +439,70 @@
   }
 }
 
-.luxuryButton {
-  display: inline-block;
-  padding: 18px 50px;
-  background: transparent;
-  color: var(--gold);
-  text-decoration: none;
-  border: 1px solid var(--gold);
-  font-size: 12px;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  position: relative;
-  overflow: hidden;
-  transition: all 0.5s ease;
+/* CTA group */
+.ctaGroup {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
   opacity: 0;
   animation: fadeIn 1s ease 1.1s forwards;
-  font-family: 'Montserrat', sans-serif; /* Consistent button font */
 }
 
-.luxuryButton::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, var(--gold), var(--copper));
-  transition: left 0.5s ease;
-  z-index: -1;
+.primaryCTA,
+.secondaryCTA {
+  padding: 18px 32px;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+  border: 1px solid var(--gold);
+  transition: all 0.3s ease;
 }
 
-.luxuryButton:hover {
+.primaryCTA {
+  background: var(--gold);
   color: var(--midnight);
+}
+
+.primaryCTA:hover {
+  background: var(--copper);
   border-color: var(--copper);
 }
 
-.luxuryButton:hover::before {
-  left: 0;
+.secondaryCTA {
+  background: transparent;
+  color: var(--gold);
 }
 
-.luxuryButton.submitted {
+.secondaryCTA:hover {
+  background: rgba(212, 175, 55, 0.1);
+}
+.submitted {
   background: linear-gradient(90deg, var(--gold), var(--copper));
   color: var(--midnight);
+}
+
+.trustChips {
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  opacity: 0;
+  animation: fadeIn 1s ease 1.3s forwards;
+}
+
+.trustChips li {
+  padding: 6px 14px;
+  font-size: 12px;
+  border: 1px solid var(--line-color);
+  border-radius: 9999px;
+  background: var(--card-bg);
+  backdrop-filter: blur(4px);
+  color: var(--secondary);
 }
 
 /* CAD Background */

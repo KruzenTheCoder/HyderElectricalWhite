@@ -9,20 +9,20 @@
 }
 
 :root {
-  /* 🎨 COLOR PALETTE — SLATE THEME WITH GOLD ACCENTS */
+  /* 🎨 COLOR PALETTE — GLASSY WHITE THEME WITH GOLD ACCENTS */
   --gold: #D4AF37;           /* core accent */
   --copper: #B87333;         /* secondary copper tone */
   --dark-navy: #1a1611;      /* used ONLY in preloader background */
   --midnight: #0f0d08;       /* used ONLY in preloader gradient & scrollbar */
   --steel: #71797E;          /* legacy grey */
-  --background: #2B2B2B;     /* neutral slate background */
-  --foreground: #F1F5F9;     /* near-white text */
-  --secondary: #CBD5E1;      /* softer slate text */
+  --background: #F8FAFC;     /* light backdrop */
+  --foreground: #1E293B;     /* dark text */
+  --secondary: #475569;      /* muted slate text */
   --muted: #94A3B8;          /* muted slate */
-  --card-bg: #334155;        /* elevated surfaces */
-  --grid-color: rgba(212, 175, 55, 0.1);   /* gold grid lines */
-  --line-color: rgba(212, 175, 55, 0.3);   /* faint gold lines */
-  --grid-color-light: rgba(212, 175, 55, 0.15); /* lighter grid */
+  --card-bg: rgba(255, 255, 255, 0.6); /* elevated glass surfaces */
+  --grid-color: rgba(212, 175, 55, 0.15);   /* gold grid lines */
+  --line-color: rgba(212, 175, 55, 0.25);   /* faint gold lines */
+  --grid-color-light: rgba(212, 175, 55, 0.1); /* lighter grid */
   --bg-color: var(--background);           /* alias for convenience */
   --font-montserrat: 'Montserrat', sans-serif;
   --font-playfair: 'Playfair Display', serif;
@@ -33,7 +33,7 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--white); /* Changed from midnight to white */
+  background: var(--background);
 }
 
 ::-webkit-scrollbar-thumb {
