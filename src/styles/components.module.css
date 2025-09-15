@@ -1108,6 +1108,7 @@
   font-family: var(--font-cinzel);
   font-size: 48px;
   color: var(--midnight);
+}
 
 .bottomRight {
   bottom: 20px;

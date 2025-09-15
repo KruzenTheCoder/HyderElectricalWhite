@@ -1,6 +1,6 @@
 /* src/app/globals.css */
 
-@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600&family=Cinzel:wght@400;700&display=swap');
+/* Removed external Google Fonts import; fonts are self-hosted via next/font */
 
 * {
   margin: 0;
